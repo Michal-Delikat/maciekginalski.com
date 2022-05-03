@@ -1,0 +1,186 @@
+/* Importowanie fontow */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wire+One&display=swap');
+
+html {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+}
+  
+h1 {
+    font-size: 55px;
+    font-weight: 400;
+    font-family: 'Wire One', sans-serif;
+    margin-bottom: 5px;
+}
+
+nav {
+    margin: 0 0 40px;
+    text-align: center;
+}
+
+ul {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    text-transform: uppercase;
+    padding-inline-start: 0;
+    margin-top: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    padding-bottom: 3px;
+    margin: 15px 27px;
+}
+
+nav ul li a {
+    width: 40%;
+    height: 48px;
+    box-sizing: margin-box;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+a:link {
+    color: #595656;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #595656;
+}
+
+a:hover {
+    color: black;
+}
+
+main {
+    padding: 0 5vw;
+}
+
+main img {
+    width: 100%;
+    margin-bottom: 5vw;
+}
+
+h1, h2, h3 {
+    color:#595656;
+    font-weight: lighter;
+}
+
+p {
+    font-size: 25px;
+    color:#595656;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    position: absolute;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+/* ID selectors */
+
+#menu h1 {
+    text-align: center;
+}
+
+#ikony {
+    width: 30%;
+    margin: 15px auto;
+}
+
+#ikony a img {
+    width: 25%;
+    margin: 0 11%;
+}
+
+#ikony a img:hover {
+    filter: brightness(30%);
+}
+
+@media (min-width: 700px) {
+    
+    #ikony a img {
+        width: 20%;
+        margin: 0 14%;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    header {
+        padding: 5px 0 0;
+    }
+
+    h1 {
+        display: inline-block;
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 2%;
+    }
+
+    nav {
+        margin: 45px 0 10px;
+    }
+
+    nav ul li {
+        margin: 15px 27px;
+    }
+
+    main {
+        width: 70%;
+        padding: 70px 15%;
+    }
+
+    main img {
+        width: 99%;
+        margin: 0.5%;
+    }
+
+    .pojedyncze {
+        width: 48.7%;
+        max-height: 49vw;
+        object-fit: cover;
+    }
+
+    /*ID selectors */
+
+    #index {
+        width: 80%;
+        padding: 70px 10%;
+    }
+
+    #ikony {
+        display: inline-block;
+        width: 15%;
+        margin: 0;
+    }
+
+    #ikony a img {
+        width: 38px;
+        margin: 0 8px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .pojedyncze {
+        width: 48.8%;
+    }
+}
+

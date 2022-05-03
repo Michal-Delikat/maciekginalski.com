@@ -1,0 +1,148 @@
+my-header header nav ul li:nth-child(3) {
+	border-bottom: 1px solid black;
+}
+
+#projekty div {
+    width: 90%;
+    margin: 0 5% 45px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+}
+
+#projekty div a {
+    text-decoration: none;
+}
+
+#projekty div a img {
+    height: 50vw;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 800px) {
+
+    #projekty div {
+        width: 40%;
+        margin: 20px 4%;
+    }
+
+    #projekty div a img {
+        max-height: 22vw;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    #projekty {
+        padding-top: 70px;
+    }
+    
+    #projekty div a img {
+        max-height: 17vw;
+        margin-bottom: 13px;
+    }
+
+    /* Maksymalne wysokosci zdjec dla projektow */
+
+    #four_seasons img.pojedyncze {
+        max-height: 44vw;
+    }
+
+    #radisson img.pojedyncze {
+        max-height: 44vw;
+    }
+
+    #sheraton img.pojedyncze {
+        max-height: 40vw;
+    }
+
+    #westin img.pojedyncze {
+        max-height: 42vw;
+    }
+
+    #marriot img.pojedyncze {
+        max-height: 39vw;
+    }
+
+    #wino_i_talerzyki img.pojedyncze {
+        max-height: 44vw;
+    }
+
+    #dziki_dom img.pojedyncze {
+        max-height: 47vw;
+    }
+
+    #winnica img.pojedyncze {
+        max-height: 45vw;
+    }
+    
+    #willa img.pojedyncze {
+        max-height: 46vw;
+    }
+    
+    #letniczowka img.pojedyncze {
+        max-height: 46vw;
+    }
+
+    #tatra_glamp img.pojedyncze {
+        max-height: 40vw;
+    }
+    
+    #ptasie_radio img.pojedyncze {
+        max-height: 44vw;
+    }
+    
+    #bukovina img.pojedyncze {
+        max-height: 38vw;
+    }
+    
+    #mlyn_jacka img.pojedyncze {
+        max-height: 35vw;
+    }
+
+    #dom_na_piekle img.pojedyncze {
+        max-height: 43vw;
+    }
+
+    #lisi_las img.pojedyncze {
+        max-height: 42vw;
+    }
+
+    #harnas img.pojedyncze {
+        max-height: 41vw;
+    }
+
+    #fragola img.pojedyncze {
+        max-height: 43vw;
+    }
+
+    #milosc img.pojedyncze {
+        max-height: 48vw;
+    }
+}
+
+@media (min-width: 1300px) {
+    
+    #projekty {
+        padding-top: 40px;
+    }
+
+    #projekty div {
+        width: 25%;
+        margin: 30px 4% ;
+        font-size: 18px;
+    }
+
+    #projekty div a img {
+        max-height: 11vw;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    #projekty {
+        font-size: 21px;
+    }
+    
+}

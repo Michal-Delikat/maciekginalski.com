@@ -1,0 +1,32 @@
+my-header header nav ul li:nth-child(2) {
+	border-bottom: 1px solid black;
+}
+
+#o_mnie p {
+    font-size: 18px;
+    text-align: left;
+    padding: 15px;
+}
+
+@media (min-width: 1000px) {
+    #o_mnie {
+        width: 1000px;
+        min-height: 54vh;
+        padding: 70px;
+        margin: 0 auto;
+    }
+
+    #o_mnie img {
+        display: inline-block;
+        width: 334px;
+        margin: 0 50px;
+        padding: 0;
+    }
+
+    #o_mnie p {
+        display: inline-block;
+        width: 472px;
+        margin: 0;
+        line-height: 170%;
+    }
+}
