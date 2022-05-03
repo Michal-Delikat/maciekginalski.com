@@ -130,9 +130,9 @@ footer p {
 
     h1 {
         display: inline-block;
-        width: 60%;
-        margin-left: 20%;
-        margin-right: 2%;
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 2%
     }
 
     nav {
@@ -155,17 +155,18 @@ footer p {
 
     .pojedyncze {
         width: 48.7%;
-        max-height: 49vw;
+        max-height: 44vw;
         object-fit: cover;
     }
 
     /*ID selectors */
 
+    /*
     #index {
         width: 80%;
         padding: 70px 10%;
     }
-
+    */
     #ikony {
         display: inline-block;
         width: 15%;

@@ -4,18 +4,6 @@ my-header header nav ul li:first-child {
 
 @media (min-width: 1100px) {
 
-	#index img {
-		width: 32%;
-	}
-
-	#index .podwojne {
-		width: 65%;
-	}
-
-	#index .potrojne {
-		width: 100%;
-	}
-
 	/*
 	img#photo1 {
 		width: 61.2%;
