@@ -13,6 +13,7 @@ body {
 
 header {
     width: 100%;
+    padding-top: 5vh;
 }
   
 h1 {
@@ -126,6 +127,7 @@ footer p {
 
 #menu h1 {
     text-align: center;
+    margin-top: 2vh;
 }
 
 #ikony {
@@ -134,19 +136,30 @@ footer p {
 }
 
 #ikony a img {
-    width: 25%;
-    margin: 0 11%;
+    width: 28%;
+    height: 28%;
+    margin: 0 10%;
 }
 
 #ikony a img:hover {
     filter: brightness(30%);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 500px) {
     
     #ikony a img {
         width: 20%;
+        height: 20%;
         margin: 0 14%;
+    }
+}
+
+@media (min-width: 700px) {
+    
+    #ikony a img {
+        width: 15%;
+        height: 15%;
+        margin: 0 17%;
     }
 }
 
@@ -158,8 +171,8 @@ footer p {
 
     h1 {
         display: inline-block;
-        width: 50%;
-        margin-left: 25%;
+        width: 40%;
+        margin-left: 30%;
         margin-right: 2%
     }
 
