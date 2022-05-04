@@ -4,7 +4,7 @@ my-header header nav ul li:nth-child(5) {
 
 #kontakt {
     text-align: left;
-    min-height: 40vh;
+    min-height: 56vh;
 }
 
 #kontakt h2 {
@@ -29,17 +29,24 @@ my-header header nav ul li:nth-child(5) {
     filter: brightness(30%);
 }
 
+@media (min-width: 500px) {
+    #kontakt {
+        min-height: 64vh;
+    }
+}
+
 @media (min-width: 800px) {
     #kontakt {
         text-align: center;
+        min-height: 64vh;
     }
 }
 
 @media (min-width: 1000px) {
     #kontakt {
-        min-height: 64vh;
         padding: 0;
         margin: 0 auto;
+        min-height: 65;
     }
 
     #kontakt h2 {
