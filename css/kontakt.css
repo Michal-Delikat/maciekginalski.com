@@ -25,11 +25,6 @@ my-header header nav ul li:nth-child(5) {
     font-weight: 400;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-}
-
 #ikony_kontakt a img:hover {
     filter: brightness(30%);
 }
@@ -55,5 +50,10 @@ footer {
     #kontakt p {
         font-size: 22px;
         margin-top: 70px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
     }
 }
