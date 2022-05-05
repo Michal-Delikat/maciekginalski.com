@@ -96,14 +96,6 @@ my-header header nav ul li:nth-child(3) {
     #bukovina img.pojedyncze {
         max-height: 38vw;
     }
-    
-    #mlyn_jacka img.pojedyncze {
-        max-height: 35vw;
-    }
-
-    #dom_na_piekle img.pojedyncze {
-        max-height: 43vw;
-    }
 
     #lisi_las img.pojedyncze {
         max-height: 42vw;
@@ -111,14 +103,6 @@ my-header header nav ul li:nth-child(3) {
 
     #harnas img.pojedyncze {
         max-height: 41vw;
-    }
-
-    #fragola img.pojedyncze {
-        max-height: 43vw;
-    }
-
-    #milosc img.pojedyncze {
-        max-height: 48vw;
     }
 }
 

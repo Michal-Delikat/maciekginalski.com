@@ -4,7 +4,7 @@ my-header header nav ul li:nth-child(5) {
 
 #kontakt {
     text-align: left;
-    min-height: 48vh;
+    height: 38vh;
 }
 
 #kontakt h2 {
@@ -25,39 +25,27 @@ my-header header nav ul li:nth-child(5) {
     font-weight: 400;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
 #ikony_kontakt a img:hover {
     filter: brightness(30%);
-}
-
-@media (min-width: 351px) {
-    #kontakt {
-        min-height: 60vh;
-    }
-}
-
-@media (min-width: 500px) {
-    #kontakt {
-        min-height: 60vh;
-    }
 }
 
 @media (min-width: 748px) {
     #kontakt {
         text-align: center;
-        min-height: 65vh;
+        margin: 0 auto;
     }
 }
 
 @media (min-width: 1000px) {
-    #kontakt {
-        padding: 0;
-        margin: 0 auto;
-        min-height: 65;
-    }
 
     #kontakt h2 {
         font-size: 28px;
-        margin: 90px 0 60px;
+        margin: 0 0 60px;
     }
 
     #kontakt h3 {
