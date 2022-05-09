@@ -1,7 +1,3 @@
-import {ANALYTICS, FONT_AWESOME} from config;
-
-console.log(ANALYTICS);
-
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
