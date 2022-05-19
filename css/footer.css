@@ -1,0 +1,9 @@
+footer {
+    width: 100%;
+    text-align: center;
+    height: 5vh;
+}
+
+footer p {
+    font-size: 15px;
+}

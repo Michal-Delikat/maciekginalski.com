@@ -1,181 +1,34 @@
-my-header header nav ul li:first-child {
-	border-bottom: 1px solid black;
+@import "o_mnie.css";
+@import "projekty.css";
+@import "milosc.css";
+@import "kontakt.css";
+
+section {
+	padding: 10px 5vw;
 }
 
-@media (min-width: 1100px) {
-
-	/*
-	img#photo1 {
-		width: 61.2%;
+@media (min-width: 1000px) {
+	main img {
+		margin-bottom: 0;
 	}
 
-	img#photo2 {
-		width: 36.3%;
+	#index div, #milosc div {
+		margin-bottom: 1.5vw;
+	}
+	
+	#index div {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	
+	#index img {
+		width: 28.5vw;
+		object-fit: cover;
+		max-height: 20vw;
 	}
 
-	img#photo3 {
-		width: 32.2%;
+	#index img.pojedyncze {
+		width: 11.7vw;
 	}
-
-	img#photo4 {
-		width: 30.2%;
-	}
-
-	img#photo5 {
-		width: 33.6%;
-	}
-
-	img#photo6 {
-		width: 63.3%;
-	}
-
-	img#photo7 {
-		width: 34.2%;
-	}
-
-	img#photo8 {
-		width: 30.5%;
-	}
-
-	img#photo9 {
-		width: 67%;
-	}
-
-	img#photo10 {
-		width: 29.4%;
-	}
-
-	img#photo11 {
-		width: 34.2%;
-	}
-
-	img#photo12 {
-		width: 32.4%;
-	}
-
-	img#photo13 {
-		width: 99%;
-	}
-
-	img#photo14 {
-		width: 31.3%;
-	}
-
-	img#photo15 {
-		width: 66.2%;
-	}
-
-	img#photo16 {
-		width: 32.9%;
-	}
-
-	img#photo17 {
-		width: 31.2%;
-	}
-
-	img#photo18 {
-		width: 31.9%;
-	}
-
-	img#photo19 {
-		width: 63.8%;
-	}
-
-	img#photo20 {
-		width: 33.7%;
-	}
-
-	img#photo21 {
-		width: 38%;
-	}
-
-	img#photo22 {
-		width: 59.5%;
-	}
-
-	img#photo23 {
-		width: 62.4%;
-	}
-
-	img#photo24 {
-		width: 35.1%;
-	}
-
-	img#photo25 {
-		width: 30.8%;
-	}
-
-	img#photo26 {
-		width: 30.7%;
-	}
-
-	img#photo27 {
-		width: 34.5%;
-	}
-
-	img#photo28 {
-		width: 64.1%;
-	}
-
-	img#photo29 {
-		width: 33.4%;
-	}
-
-	img#photo30 {
-		width: 34%;
-	}
-
-	img#photo31 {
-		width: 31.7%;
-	}
-
-	img#photo32 {
-		width: 30.3%;
-	}
-
-	img#photo33 {
-		width: 31.8%;
-	}
-
-	img#photo34 {
-		width: 65.7%;
-	}
-
-	img#photo35 {
-		width: 99%;
-	}
-
-	img#photo36 {
-		width: 32.4%;
-	}
-
-	img#photo37 {
-		width: 65.1%;
-	}
-
-	img#photo38 {
-		width: 65.2%;
-	}
-
-	img#photo39 {
-		width: 32.3%;
-	}
-
-	img#photo40 {
-		width: 32.8%;
-	}
-
-	img#photo41 {
-		width: 64.7%;
-	}
-
-	img#photo42 {
-		width: 63.2%;
-	}
-
-	img#photo43 {
-		width: 34.3%;
-	}
-	*/
-
 }

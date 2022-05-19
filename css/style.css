@@ -1,6 +1,10 @@
-/* Importowanie fontow */
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wire+One&display=swap');
+/* Header styling */
+@import "header.css";
+/* Footer  styling */
+@import "footer.css";
 
 html {
     font-family: 'Raleway', sans-serif;
@@ -11,10 +15,9 @@ body {
     margin: 0;
 }
 
-header {
-    width: 100%;
-    min-height: 20vh;
-    padding-top: 5vh;
+h1, h3 {
+    color:#595656;
+    font-weight: lighter;
 }
   
 h1 {
@@ -24,34 +27,11 @@ h1 {
     margin: 0 0 5px;
 }
 
-nav {
-    margin: 0 0 40px;
+h2 {
     text-align: center;
-}
-
-ul {
-    margin: 0;
-}
-
-nav ul {
-    list-style-type: none;
-    text-transform: uppercase;
-    padding-inline-start: 0;
-    margin-top: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    padding-bottom: 3px;
-    margin: 15px 27px;
-}
-
-nav ul li a {
-    width: 40%;
-    height: 48px;
-    box-sizing: margin-box;
-    font-size: 18px;
+    font-size: 32px;
     font-weight: 300;
+    margin-top: 0;
 }
 
 a:link {
@@ -67,34 +47,14 @@ a:hover {
     color: black;
 }
 
-main {
-    padding: 0 5vw;
-    min-height: 55vh;
-}
-
 main img {
     width: 100%;
     margin-bottom: 5vw;
 }
 
-h1, h2, h3 {
-    color:#595656;
-    font-weight: lighter;
-}
-
 p {
     font-size: 25px;
     color:#595656;
-}
-
-footer {
-    width: 100%;
-    text-align: center;
-    height: 5vh;
-}
-
-footer p {
-    font-size: 15px;
 }
 
 /* Class selectors */
@@ -123,76 +83,3 @@ footer p {
     pointer-events: auto;
     opacity: 1;
 }
-
-/* ID selectors */
-
-#menu h1 {
-    text-align: center;
-    margin-top: 2vh;
-}
-
-#ikony {
-    width: 30%;
-    margin: 15px auto;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#ikony a img {
-    width: 2em;
-}
-
-#ikony a img:hover {
-    filter: brightness(30%);
-}
-
-@media (min-width: 1000px) {
-
-    h1 {
-        display: inline-block;
-        width: 40%;
-        margin-left: 30%;
-        margin-right: 2%
-    }
-
-    nav {
-        margin: 45px 0 10px;
-    }
-
-    nav ul li {
-        margin: 15px 27px;
-    }
-
-    main {
-        width: 70%;
-        padding: 70px 15%;
-    }
-
-    main img {
-        width: 99%;
-        margin: 0.5%;
-        max-height: 44vw;
-    }
-
-    /* Class selectors */
-
-    .pojedyncze {
-        width: 48.7%;
-        max-height: 44vw;
-        object-fit: cover;
-    }
-
-    /*ID selectors */
-
-    #ikony {
-        display: inline-block;
-        width: 15%;
-        margin: 0;
-    }
-
-    #ikony a img {
-        width: 38px;
-        margin: 0 8px;
-    }
-}
-
