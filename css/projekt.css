@@ -1,0 +1,91 @@
+main {
+    padding: 5vw 10vw;
+}
+
+main img {
+    margin-bottom: 5vw;
+}
+
+@media (min-width: 1000px) {
+
+    main div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    main img {
+        width: 99%;
+        margin: 0.5%;
+        max-height: 44vw;
+        object-fit: cover;
+    }
+
+    .pojedyncze {
+        width: 48.7%;
+        max-height: 44vw;
+        object-fit: cover;
+    }
+
+    /* Maksymalne wysokosci zdjec dla projektow */
+
+    #four_seasons img.pojedyncze {
+        max-height: 44vw;
+    }
+
+    #radisson img.pojedyncze {
+        max-height: 44vw;
+    }
+
+    #sheraton img.pojedyncze {
+        max-height: 40vw;
+    }
+
+    #westin img.pojedyncze {
+        max-height: 42vw;
+    }
+
+    #marriot img.pojedyncze {
+        max-height: 39vw;
+    }
+
+    #wino_i_talerzyki img.pojedyncze {
+        max-height: 44vw;
+    }
+
+    #dziki_dom img.pojedyncze {
+        max-height: 47vw;
+    }
+
+    #winnica img.pojedyncze {
+        max-height: 45vw;
+    }
+    
+    #willa img.pojedyncze {
+        max-height: 46vw;
+    }
+    
+    #letniczowka img.pojedyncze {
+        max-height: 46vw;
+    }
+
+    #tatra_glamp img.pojedyncze {
+        max-height: 40vw;
+    }
+    
+    #ptasie_radio img.pojedyncze {
+        max-height: 44vw;
+    }
+    
+    #bukovina img.pojedyncze {
+        max-height: 37vw;
+    }
+
+    #lisi_las img.pojedyncze {
+        max-height: 42vw;
+    }
+
+    #harnas img.pojedyncze {
+        max-height: 41vw;
+    }
+}

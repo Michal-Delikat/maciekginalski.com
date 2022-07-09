@@ -1,7 +1,3 @@
-my-header header nav ul li:nth-child(5) {
-	border-bottom: 1px solid black;
-}
-
 #kontakt {
     text-align: left;
     height: 38vh;
@@ -12,7 +8,7 @@ my-header header nav ul li:nth-child(5) {
     font-size: 23px;
 }
 
-#kontakt h3 {
+#kontakt h4 {
     text-align: center;
 }
 
@@ -23,11 +19,6 @@ my-header header nav ul li:nth-child(5) {
 
 #kontakt p a {
     font-weight: 400;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
 }
 
 #ikony_kontakt a img:hover {
