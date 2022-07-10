@@ -11,7 +11,7 @@ section {
 		margin-bottom: 0;
 	}
 
-	#index div, #milosc div {
+	#index div {
 		margin-bottom: 1.5vw;
 	}
 	
@@ -24,10 +24,16 @@ section {
 	#index img {
 		width: 28.5vw;
 		object-fit: cover;
-		max-height: 20vw;
 	}
 
 	#index img.pojedyncze {
-		width: 11.7vw;
+		width: 16.7vw;
+	}
+}
+
+@media (min-width: 800px) {
+
+	section {
+		padding: 50px 5vw;
 	}
 }
