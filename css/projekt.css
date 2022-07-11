@@ -46,43 +46,15 @@ main img {
         max-height: 39vw;
     }
 
-    #wino_i_talerzyki img.pojedyncze {
-        max-height: 44vw;
-    }
-
     #dziki_dom img.pojedyncze {
         max-height: 47vw;
-    }
-
-    #winnica img.pojedyncze {
-        max-height: 45vw;
     }
     
     #willa img.pojedyncze {
         max-height: 46vw;
     }
     
-    #letniczowka img.pojedyncze {
-        max-height: 46vw;
-    }
-
-    #tatra_glamp img.pojedyncze {
-        max-height: 40vw;
-    }
-    
-    #ptasie_radio img.pojedyncze {
-        max-height: 44vw;
-    }
-    
     #bukovina img.pojedyncze {
         max-height: 37vw;
-    }
-
-    #lisi_las img.pojedyncze {
-        max-height: 42vw;
-    }
-
-    #harnas img.pojedyncze {
-        max-height: 41vw;
     }
 }
