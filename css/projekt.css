@@ -17,14 +17,11 @@ main img {
     main img {
         width: 99%;
         margin: 0.5%;
-        max-height: 44vw;
         object-fit: cover;
     }
 
     .pojedyncze {
         width: 48.7%;
-        max-height: 44vw;
-        object-fit: cover;
     }
 
     /* Maksymalne wysokosci zdjec dla projektow */
