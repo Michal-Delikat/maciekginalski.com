@@ -7,8 +7,7 @@ public_folder: "/img/uploads"
 
 collections:
   - name: "about"
-    label: "Opis"
-    folder: "_description"
-    create: false
+    label: "O mnie"
+    file: "about/about.yml"
     fields:
-      - { label: "Opis", name: "description", widget: "string"}
+      - { name: "content", widget: "string"}
