@@ -19,11 +19,12 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/index.css">
 		<script type="module" src="index.js"></script>
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body>
 		<my-header></my-header>
 		<main class="ui container">
-			<section id="index">
+			<section id="main-photos">
 				<div>
 					<img src="img/index_photos/1.jpg">
 					<img src="img/index_photos/2.jpg">
@@ -140,13 +141,27 @@
 				<h3 id="kontakt_1">Jeśli jesteś zainteresowany współpracą, zapraszam do kontaktu!</h3>
 				<h4 id="kontakt_2">ginalskimaciek1@gmail.com</h4>
 				<h4 id="kontakt_3">+48 603 934 203</h4>
-				<p id="kontakt_4">Możesz śmiało do mnie napisać także na <a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank">instagramie</a>
-					 lub <a href="https://www.facebook.com/MaciekGinalski" target="_blank">facebooku.</a></p>
+				<p id="kontakt_4">Możesz śmiało do mnie napisać także na 
+					<a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank">instagramie</a>
+					 lub 
+					<a href="https://www.facebook.com/MaciekGinalski" target="_blank">facebooku.</a>
+				</p>
 			</section>
 		</main>
 		<my-footer></my-footer>
 		<a href="#" class="to-top">
 			<i class="fas fa-chevron-up"></i>
 		</a>
+		<script>
+			if (window.netlifyIdentity) {
+			  window.netlifyIdentity.on("init", (user) => {
+				if (!user) {
+				  window.netlifyIdentity.on("login", () => {
+					document.location.href = "/admin/";
+				  });
+				}
+			  });
+			}
+		  </script>
 	</body>
 </html>

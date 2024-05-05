@@ -11,22 +11,22 @@ section {
 		margin-bottom: 0;
 	}
 
-	#index div {
+	#main-photos div {
 		margin-bottom: 1.5vw;
 	}
 	
-	#index div {
+	#main-photos div {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
 	
-	#index img {
+	#main-photos img {
 		width: 28.5vw;
 		object-fit: cover;
 	}
 
-	#index img.pojedyncze {
+	#main-photos img.pojedyncze {
 		width: 16.7vw;
 	}
 }
