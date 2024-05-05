@@ -9,6 +9,6 @@ collections:
   - name: "about"
     label: "Opis"
     folder: "_description"
-    create: true
+    create: false
     fields:
       - { label: "Opis", name: "description", widget: "string"}
