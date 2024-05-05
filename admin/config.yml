@@ -8,7 +8,7 @@ public_folder: "/img/uploads"
 collections:
   - name: "about"
     label: "Opis"
-    folder: "description"
-    create: false
+    folder: "_description"
+    create: true
     fields:
       - { label: "Opis", name: "description", widget: "string"}
