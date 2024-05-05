@@ -8,6 +8,9 @@ public_folder: "/img/uploads"
 collections:
   - name: "about"
     label: "O mnie"
-    file: "about/about.yml"
-    fields:
-      - { label: "Opis", name: "content", widget: "string"}
+    files: 
+      - label: "O mnie"
+        name: "about"
+        file: "about/about.yml"
+        fields:
+          - { label: "Opis", name: "content", widget: "string"}
