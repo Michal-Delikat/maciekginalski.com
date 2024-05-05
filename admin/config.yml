@@ -10,4 +10,4 @@ collections:
     label: "O mnie"
     file: "about/about.yml"
     fields:
-      - { name: "content", widget: "string"}
+      - { label: "Opis", name: "content", widget: "string"}
