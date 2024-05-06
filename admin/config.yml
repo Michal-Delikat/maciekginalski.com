@@ -11,6 +11,6 @@ collections:
     files: 
       - label: "O mnie"
         name: "about"
-        file: "about/about.yml"
+        file: "about/about.json"
         fields:
           - { label: "Opis", name: "content", widget: "string"}
