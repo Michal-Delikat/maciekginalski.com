@@ -16,6 +16,11 @@ collections:
           - { label: "Opis", name: "content", widget: "string"}
       - name: "profile_image"
         label: "Zdjęcie profilowe"
-        file: "img/profilowe.jpeg"
+        file: "img/uploads/profilowe.jpeg"
+        choose_url: false
+        default: "img/uploads/profilowe.jpeg"
+        media_library: 
+          config:
+            multiple: false
         fields:
           - { label: "Zdjęcie profilowe", name: "image", widget: "image"}
