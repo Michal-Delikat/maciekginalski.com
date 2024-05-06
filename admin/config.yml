@@ -9,8 +9,13 @@ collections:
   - name: "about"
     label: "O mnie"
     files: 
-      - label: "O mnie"
-        name: "about"
+      - name: "about"
+        label: "O mnie"
         file: "about/about.json"
         fields:
           - { label: "Opis", name: "content", widget: "string"}
+      - name: "profile_image"
+        label: "Zdjęcie profilowe"
+        file: "img/profilowe.jpeg"
+        fields:
+          - { label: "Zdjęcie profilowe", name: "image", widget: "image"}
