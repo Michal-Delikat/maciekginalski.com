@@ -14,10 +14,10 @@ collections:
         fields:
           - { label: "Opis", name: "content", widget: "string"}
   - name: "images"
-      label: "Images Collection"
-      folder: "_images"
-      create: true
-      fields:
-        - name: "image"
-          label: "Image"
-          widget: "image"
+    label: "Images Collection"
+    folder: "_images"
+    create: true
+    fields:
+      - name: "image"
+        label: "Image"
+        widget: "image"
