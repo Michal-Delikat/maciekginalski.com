@@ -13,13 +13,11 @@ collections:
         file: "about/about.json"
         fields:
           - { label: "Opis", name: "content", widget: "string"}
-      - name: "profile_image"
-        label: "Zdjęcie profilowe"
-        file: "img/uploads/profilowe.jpeg"
-        choose_url: false
-        default: "img/uploads/profilowe.jpeg"
-        media_library: 
-          config:
-            multiple: false
+      - name: "images"
+        label: "Images Collection"
+        folder: "_images"
+        create: true
         fields:
-          - { label: "Zdjęcie profilowe", name: "image", widget: "image"}
+          - name: "image"
+            label: "Image"
+            widget: "image"
