@@ -3,7 +3,6 @@ backend:
   branch: test
 
 media_folder: "img/uploads"
-public_folder: "/img/static"
 
 collections:
   - name: "about"
@@ -16,9 +15,9 @@ collections:
           - { label: "Opis", name: "content", widget: "string"}
       - name: "profile_image"
         label: "Zdjęcie profilowe"
-        file: "img/static/profilowe.jpeg"
+        file: "img/uploads/profilowe.jpeg"
         choose_url: false
-        default: "img/static/profilowe.jpeg"
+        default: "img/uploads/profilowe.jpeg"
         media_library: 
           config:
             multiple: false
