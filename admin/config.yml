@@ -13,11 +13,11 @@ collections:
         file: "about/about.json"
         fields:
           - { label: "Opis", name: "content", widget: "string"}
-      - name: "images"
-        label: "Images Collection"
-        folder: "_images"
-        create: true
-        fields:
-          - name: "image"
-            label: "Image"
-            widget: "image"
+  - name: "images"
+      label: "Images Collection"
+      folder: "_images"
+      create: true
+      fields:
+        - name: "image"
+          label: "Image"
+          widget: "image"
