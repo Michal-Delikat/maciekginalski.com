@@ -1,5 +1,5 @@
 main {
-    padding: 50px 10vw;
+    padding: 50px 20vw;
 }
 
 main img {
@@ -16,11 +16,13 @@ main img {
 
     main img {
         width: 99%;
+        aspect-ratio: 16/9;
         margin: 0.5%;
         object-fit: cover;
     }
 
     .pojedyncze {
         width: 48.7%;
+        aspect-ratio: 4/5;
     }
 }

@@ -21,7 +21,23 @@
 		<script type="module" src="index.js"></script>
 	</head>
 	<body>
-		<my-header></my-header>
+		<header>
+            <div id="menu">
+                <h1><a href="index.html">Maciek Ginalski Photography</a></h1>
+                <div id="ikony">
+                    <a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank"><img src="img/instagram.png"></a>
+                    <a href="https://www.facebook.com/MaciekGinalski" target="_blank"><img src="img/facebook.png"></a>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#index">Strona główna</a></li>
+                    <li><a href="index.html#o_mnie">O mnie</a></li>
+                    <li><a href="index.html#projekty">Projekty</a></li>
+                    <li><a href="index.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>		
 		<main class="ui container">
 			<section id="index">
 				<div>
@@ -59,7 +75,15 @@
 				<!-- CONTENTFUL_START -->
 
       <div>
-        <a href="mandarin_oriental_hyde_park.html">
+        <a href="dist/hôtel_de_crillon.html">
+          <img src="https://images.ctfassets.net/7tv4k97cl69q/X2eaHOj1sXNfSZyePg0fa/3b97575900a2a9f22dbaa9390212c5c8/crillon.jpeg">
+          Hôtel de Crillon
+        </a>
+      </div>
+    
+
+      <div>
+        <a href="dist/mandarin_oriental_hyde_park.html">
           <img src="https://images.ctfassets.net/7tv4k97cl69q/3yEYJhfPJM7cAeowunNziG/38080931a650efb02f619bb201a22447/mandarin.jpeg">
           Mandarin Oriental Hyde Park
         </a>
@@ -67,15 +91,7 @@
     
 
       <div>
-        <a href="hotel_cośtam.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/X2eaHOj1sXNfSZyePg0fa/1280f9b653b1548494e49995fdc1e57e/3.jpeg">
-          Hotel cośtam
-        </a>
-      </div>
-    
-
-      <div>
-        <a href="winobranie.html">
+        <a href="dist/winobranie.html">
           <img src="https://images.ctfassets.net/7tv4k97cl69q/4kH3P30GrwBZ3tfiRA72Pm/8d388824702f93faa8357e03b271c2bc/winnica.jpg">
           Winobranie
         </a>
@@ -92,9 +108,14 @@
 					 lub <a href="https://www.facebook.com/MaciekGinalski" target="_blank">facebooku.</a></p>
 			</section>
 		</main>
-		<my-footer></my-footer>
+		<footer>
+            <p>&copy; Maciek Ginalski <span id="year"></span></p>
+        </footer>
 		<a href="#" class="to-top">
 			<i class="fas fa-chevron-up"></i>
 		</a>
+		<script>
+			document.getElementById('year').innerText = new Date().getFullYear();
+		</script>
 	</body>
 </html>
