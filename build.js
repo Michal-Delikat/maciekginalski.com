@@ -3,9 +3,6 @@ import { createClient } from 'contentful';
 import fs from 'fs';
 import path from 'path';
 
-console.log('SPACE ID:', process.env.CONTENTFUL_SPACE_ID);
-console.log('TOKEN:', process.env.CONTENTFUL_ACCESS_TOKEN);
-
 // 1. Setup client
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -46,36 +43,53 @@ async function build() {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Maciek Ginalski</title>
           <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-          <link rel="stylesheet" href="css/style.css">
-          <link rel="stylesheet" href="css/projekt.css">
-          <script type="module" src="index.js"></script>
+          <link rel="stylesheet" href="../css/style.css">
+          <link rel="stylesheet" href="../css/projekt.css">
+          <script type="module" src="../index.js"></script>
         </head>
         <body>
-          <my-header></my-header>
+          <header>
+            <div id="menu">
+                <h1><a href="index.html">Maciek Ginalski Photography</a></h1>
+                <div id="ikony">
+                    <a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank"><img src="../img/instagram.png"></a>
+                    <a href="https://www.facebook.com/MaciekGinalski" target="_blank"><img src="../img/facebook.png"></a>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#index">Strona główna</a></li>
+                    <li><a href="../index.html#o_mnie">O mnie</a></li>
+                    <li><a href="../index.html#projekty">Projekty</a></li>
+                    <li><a href="../index.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+          </header>	
           <main>
             ${imagesHtml}
           </main>
-          <my-footer></my-footer>
+           <footer>
+            <p>&copy; Maciek Ginalski ${new Date().getFullYear()}</p>
+          </footer>
           <a href="#" class="to-top">
             <i class="fas fa-chevron-up"></i>
           </a>
         </body>
       </html>
-    `
+    `;
 
-    fs.writeFileSync(fileTitle, fileHtml);
+    const filePath = path.join(process.cwd(), '/dist', fileTitle);
+    fs.writeFileSync(filePath, fileHtml);
 
     return `
       <div>
-        <a href="${fileTitle}">
+        <a href="dist/${fileTitle}">
           <img src="${imageUrl}">
           ${title}
         </a>
       </div>
     `
   }).join(`\n`);
-
-  console.log(projectsHtml);
 
   const filePath = path.join(process.cwd(), 'index.html');
   let html = fs.readFileSync(filePath, 'utf-8');
@@ -88,7 +102,6 @@ async function build() {
   html = html.replace(markerRegex, markerBlock);
 
   const outPath = path.join(process.cwd(), 'index.html');
-  fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, html, 'utf-8');
 }
 
