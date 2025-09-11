@@ -78,6 +78,10 @@ async function build() {
       </html>
     `;
 
+    const distDir = path.join(process.cwd(), 'dist');
+    if (!fs.existsSync(distDir)) {
+      fs.mkdirSync(distDir);
+    }
     const filePath = path.join(process.cwd(), '/dist', fileTitle);
     fs.writeFileSync(filePath, fileHtml);
 
