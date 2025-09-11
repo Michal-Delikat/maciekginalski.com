@@ -23,38 +23,4 @@ main img {
     .pojedyncze {
         width: 48.7%;
     }
-
-    /* Maksymalne wysokosci zdjec dla projektow */
-
-    #four_seasons img.pojedyncze {
-        max-height: 44vw;
-    }
-
-    #radisson img.pojedyncze {
-        max-height: 44vw;
-    }
-
-    #sheraton img.pojedyncze {
-        max-height: 40vw;
-    }
-
-    #westin img.pojedyncze {
-        max-height: 42vw;
-    }
-
-    #marriot img.pojedyncze {
-        max-height: 39vw;
-    }
-
-    #dziki_dom img.pojedyncze {
-        max-height: 47vw;
-    }
-    
-    #willa img.pojedyncze {
-        max-height: 46vw;
-    }
-    
-    #winnica img.pojedyncze {
-        max-height: 53vw;
-    }
 }
