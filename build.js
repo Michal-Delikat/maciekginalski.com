@@ -21,7 +21,7 @@ async function build() {
 
     const imagesHtml = item.fields.projectImages.map((image) => {
       const file = image.fields.file;
-      return `<img src="https:${file.url}" class="${file.details.image.height > file.details.image.width ? 'pojedyncze' : ''}">`;
+      return `<img src="https:${file.url}" ${file.details.image.height > file.details.image.width ? 'class="pojedyncze"' : ''}>`;
     }).join('');
 
     const fileHtml = `
