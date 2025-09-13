@@ -46,3 +46,39 @@ window.addEventListener("scroll", () => {
         toTop.classList.remove("active")
     }
 })
+
+const banner = document.getElementById("cookies-banner");
+const acceptBtn = document.querySelector("#accept-cookies-button");
+const rejectBtn = document.querySelector("#reject-cookies-button");
+
+function loadAnalytics() {
+  const gaScript = document.createElement("script");
+  gaScript.async = true;
+  gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-52ZZTQ2TBL";
+  document.head.appendChild(gaScript);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-52ZZTQ2TBL');
+}
+
+acceptBtn.addEventListener("click", () => {
+  localStorage.setItem("cookies_consent", "accepted");
+  loadAnalytics();
+  banner.style.display = "none";
+});
+
+rejectBtn.addEventListener("click", () => {
+  localStorage.setItem("cookies_consent", "rejected");
+  banner.style.display = "none";
+});
+
+const savedConsent = localStorage.getItem("cookies_consent");
+if (savedConsent === "accepted") {
+  loadAnalytics();
+//   banner.style.display = "none";
+} else if (savedConsent === "rejected") {
+//   banner.style.display = "none";
+}
