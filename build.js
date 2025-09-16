@@ -50,7 +50,7 @@ async function build() {
         <body>
           <header>
             <div id="menu">
-                <h1><a href="index.html">Maciek Ginalski Photography</a></h1>
+                <h1><a href="../index.html">Maciek Ginalski Photography</a></h1>
                 <div id="ikony">
                     <a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank"><img src="../img/instagram.png"></a>
                     <a href="https://www.facebook.com/MaciekGinalski" target="_blank"><img src="../img/facebook.png"></a>
