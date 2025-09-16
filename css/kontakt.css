@@ -41,9 +41,37 @@
     #kontakt h3 {
         font-size: 26px;
     }
-
+    
     #kontakt p {
         font-size: 22px;
-        margin-top: 70px;
+    }
+
+}
+
+#privacy-politics {
+    margin: 0 auto;
+}
+
+#privacy-politics, #privacy-politics p {
+    font-size: 9px;
+}
+
+#privacy-politics p {
+    margin-top: 4px;
+}
+
+#privacy-politics li {
+    text-align: left;
+}
+
+@media (min-width: 748px) {
+    #privacy-politics {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    #privacy-politics ul {
+        width: fit-content;
+        margin: 0 auto;
     }
 }
