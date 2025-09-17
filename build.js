@@ -28,15 +28,6 @@ async function build() {
       <!DOCTYPE html>
       <html lang="pl">
         <head>
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-52ZZTQ2TBL"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-52ZZTQ2TBL');
-          </script>
           <!-- Font awesome -->
           <script src="https://kit.fontawesome.com/7994736079.js" crossorigin="anonymous"></script>
           <meta charset="UTF-8">
@@ -48,29 +39,11 @@ async function build() {
           <script type="module" src="../index.js"></script>
         </head>
         <body>
-          <header>
-            <div id="menu">
-                <h1><a href="index.html">Maciek Ginalski Photography</a></h1>
-                <div id="ikony">
-                    <a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank"><img src="../img/instagram.png"></a>
-                    <a href="https://www.facebook.com/MaciekGinalski" target="_blank"><img src="../img/facebook.png"></a>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html#index">Strona główna</a></li>
-                    <li><a href="../index.html#o_mnie">O mnie</a></li>
-                    <li><a href="../index.html#projekty">Projekty</a></li>
-                    <li><a href="../index.html#kontakt">Kontakt</a></li>
-                </ul>
-            </nav>
-          </header>	
+          <my-header></my-header>
           <main>
             ${imagesHtml}
           </main>
-           <footer>
-            <p>&copy; Maciek Ginalski ${new Date().getFullYear()}</p>
-          </footer>
+          <my-footer></my-footer>
           <a href="#" class="to-top">
             <i class="fas fa-chevron-up"></i>
           </a>

@@ -53,7 +53,7 @@
 }
 
 #privacy-politics, #privacy-politics p {
-    font-size: 9px;
+    font-size: 11px;
 }
 
 #privacy-politics p {
@@ -62,6 +62,7 @@
 
 #privacy-politics li {
     text-align: left;
+    list-style-type: circle;
 }
 
 @media (min-width: 748px) {
