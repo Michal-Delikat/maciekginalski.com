@@ -11,10 +11,10 @@ class MyHeader extends HTMLElement {
             </div>
             <nav>
                 <ul>
-                    <li><a href="/index.html#index">Strona główna</a></li>
-                    <li><a href="/index.html#o_mnie">O mnie</a></li>
-                    <li><a href="/index.html#projekty">Projekty</a></li>
-                    <li><a href="/index.html#kontakt">Kontakt</a></li>
+                    <li><a href="/index.html#index">Main page</a></li>
+                    <li><a href="/index.html#o_mnie">About me</a></li>
+                    <li><a href="/index.html#projekty">Projects</a></li>
+                    <li><a href="/index.html#kontakt">Contact</a></li>
                 </ul>
             </nav>
         </header>		
