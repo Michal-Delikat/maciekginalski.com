@@ -24,6 +24,53 @@
     filter: brightness(30%);
 }
 
+.accordion {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.accordion-header {
+    position: relative;
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    color: #595656;
+    transition: color 0.3s ease;
+}
+
+.accordion-header:hover {
+    color: #333;
+}
+
+.accordion-arrow {
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+    transform: rotate(180deg);
+}
+
+.accordion-arrow.rotate {
+    transform: rotate(0deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+}
+
+.accordion-content.show {
+    max-height: 2000px;
+    padding: 5px 0 20px;
+}
+
 @media (min-width: 748px) {
     #kontakt {
         text-align: center;
@@ -48,30 +95,29 @@
 
 }
 
-#privacy-politics {
+#privacy-policy {
     margin: 0 auto;
 }
 
-#privacy-politics, #privacy-politics p {
+#privacy-policy, #privacy-policy p {
     font-size: 11px;
 }
 
-#privacy-politics p {
+#privacy-policy p {
     margin-top: 4px;
 }
 
-#privacy-politics li {
+#privacy-policy li {
     text-align: left;
     list-style-type: circle;
 }
 
 @media (min-width: 748px) {
-    #privacy-politics {
-        width: 50%;
+    #privacy-policy {
         margin: 0 auto;
     }
 
-    #privacy-politics ul {
+    #privacy-policy ul {
         width: fit-content;
         margin: 0 auto;
     }
