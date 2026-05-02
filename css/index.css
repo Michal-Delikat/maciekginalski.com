@@ -29,16 +29,11 @@ section {
 	#index img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
 	}
 
 	#index picture:has(> img.pojedyncze) {
 		width: 16.7vw;
 		height: 24vw; 
-	}
-
-	picture img {
-		object-fit: cover;
 	}
 }
 
