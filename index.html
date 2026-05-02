@@ -23,27 +23,61 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/index.css">
 		<script type="module" src="index.js"></script>
+    <script type="module" src="privacy_policy_accordion.js"></script>
 	</head>
 	<body>
 		<my-header></my-header>
 		<main class="ui container">
 			<section id="index">
 				<div>
-					<img src="img/index_photos/1.jpg">
-					<img src="img/index_photos/2.jpg">
-					<img src="img/index_photos/3.jpg">
+					<picture>
+						<source srcset="img/index_photos/webp/1.webp" type="image/webp">
+						<img src="img/index_photos/1.jpg">
+					</picture>
+					<picture>
+						<source srcset="img/index_photos/webp/2.webp" type="image/webp">
+						<img src="img/index_photos/2.jpg">
+					</picture>
+					<picture>
+						<source srcset="img/index_photos/webp/3.webp" type="image/webp">
+						<img src="img/index_photos/3.jpg">
+					</picture>
 				</div>
 				<div>
-					<img src="img/index_photos/4.jpg" class="pojedyncze">
-					<img src="img/index_photos/5.jpeg" class="pojedyncze">
-					<img src="img/index_photos/6.jpeg" class="pojedyncze">	
-					<img src="img/index_photos/7.jpg" class="pojedyncze">
-					<img src="img/index_photos/8.jpg" class="pojedyncze">
+					<picture>
+						<source srcset="img/index_photos/webp/4.webp" type="image/webp">
+						<img src="img/index_photos/4.jpg" class="pojedyncze">
+					</picture>
+					<picture>
+						<source srcset="img/index_photos/webp/5.webp" type="image/webp">
+						<img src="img/index_photos/5.jpeg" class="pojedyncze">
+					</picture>
+					<picture>
+						<source srcset="img/index_photos/webp/6.webp" type="image/webp">
+						<img src="img/index_photos/6.jpeg" class="pojedyncze">
+					</picture>	
+					<picture>
+						<source srcset="img/index_photos/webp/7.webp" type="image/webp">
+						<img src="img/index_photos/7.jpg" class="pojedyncze">
+					</picture>
+					<picture>
+						<source srcset="img/index_photos/webp/8.webp" type="image/webp">
+						<img src="img/index_photos/8.jpg" class="pojedyncze">
+					</picture>
 				</div>
 				<div>
-					<img src="img/index_photos/9.jpg">
-					<img src="img/index_photos/10.jpg">
-					<img src="img/index_photos/11.jpg">
+					<picture>
+						<source srcset="img/index_photos/webp/9.webp" type="image/webp">
+						<img src="img/index_photos/9.jpg">
+					</picture>
+					<picture>
+						<source srcset="img/index_photos/webp/10.webp" type="image/webp">
+						<img src="img/index_photos/10.jpg">
+					</picture>
+					<picture>
+						<source srcset="img/index_photos/webp/11.webp" type="image/webp">
+						<img src="img/index_photos/11.jpg">
+					</picture>
 				</div>
 			</section>
 			<section id="o_mnie">
@@ -184,13 +218,13 @@
             </button>
             <div id="privacy-policy" class="accordion-content">
                 <p>The provided personal data are used exclusively for the following purposes:</p>
-                <ul>
+                <ul class="privacy-policy-list">
                     <li>corresponding with the User,</li>
                     <li>responding to inquiries,</li>
                     <li>establishing and maintaining business contact.</li>
                 </ul>
                 <p>The data are not used for any other purpose. In particular, they are not shared with third parties and are not used for marketing purposes.</p>
-                <p>Personal data are processed on the basis of Article 6(1)(b) of the GDPR – when processing is necessary to take steps prior to entering into a contract, and Article 6(1)(f) of the GDPR – when processing is based on the legitimate interest of the Controller, which is to conduct correspondence.</p>
+                <p>Personal data are processed on the basis of Article 6.1.b of the GDPR – when processing is necessary to take steps prior to entering into a contract, and Article 6.1.f of the GDPR – when processing is based on the legitimate interest of the Controller, which is to conduct correspondence.</p>
                 <p>This Privacy Policy is governed by the General Data Protection Regulation (GDPR). For Users outside the European Union, data will be handled with the same level of care and protection as required under GDPR.</p>
             </div>
         </div>
@@ -200,8 +234,5 @@
 		<a href="#" class="to-top">
 			<i class="fas fa-chevron-up"></i>
 		</a>
-		<script>
-			document.getElementById('year').innerText = new Date().getFullYear();
-		</script>
 	</body>
 </html>
