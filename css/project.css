@@ -21,7 +21,7 @@ main img {
         object-fit: cover;
     }
 
-    .pojedyncze {
+    .vertical_image {
         width: 48.7%;
         aspect-ratio: 4/5;
     }

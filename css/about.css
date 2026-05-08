@@ -1,5 +1,5 @@
 
-#o_mnie p {
+#about p {
     font-size: 18px;
     text-align: left;
     padding: 15px;
@@ -7,20 +7,20 @@
 
 @media (min-width: 1000px) {
     
-    #o_mnie div {
+    #about div {
         width: 1000px;
         min-height: 40vh;
         margin: 0 auto;
     }
 
-    #o_mnie img {
+    #about img {
         display: inline-block;
         width: 334px;
         margin-right: 50px;
         padding: 0;
     }
 
-    #o_mnie p {
+    #about p {
         display: inline-block;
         width: 472px;
         margin: 0;

@@ -1,6 +1,6 @@
-@import "o_mnie.css";
-@import "projekty.css";
-@import "kontakt.css";
+@import "about.css";
+@import "projects.css";
+@import "contact.css";
 
 section {
 	padding: 10px 5vw;
@@ -31,7 +31,7 @@ section {
 		height: 100%;
 	}
 
-	#index picture:has(> img.pojedyncze) {
+	#index picture:has(> img.vertical_image) {
 		width: 16.7vw;
 		height: 24vw; 
 	}

@@ -1,9 +1,9 @@
 
-#projekty {
+#projects {
     padding: 0 10vw;
 }
 
-#projekty div {
+#projects div {
     width: 90%;
     margin: 0 5% 45px;
     text-align: center;
@@ -11,12 +11,12 @@
     font-size: 20px;
 }
 
-#projekty div a {
+#projects div a {
     text-decoration: none;
     font-family: "Quicksand";
 }
 
-#projekty div a img {
+#projects div a img {
     height: 50vw;
     object-fit: cover;
     margin-bottom: 10px;
@@ -26,23 +26,23 @@
 
 @media (min-width: 800px) {
 
-    #projekty {
+    #projects {
         padding: 50px 10vw;
     }
 
-    #projekty div {
+    #projects div {
         width: 40%;
         margin: 20px 4%;
     }
 
-    #projekty div a img {
+    #projects div a img {
         max-height: 22vw;
     }
 }
 
 @media (min-width: 1000px) {
     
-    #projekty div a img {
+    #projects div a img {
         max-height: 17vw;
         margin-bottom: 13px;
     }
@@ -51,20 +51,20 @@
 
 @media (min-width: 1300px) {
 
-    #projekty div {
+    #projects div {
         width: 25%;
         margin: 30px 4% ;
         font-size: 18px;
     }
 
-    #projekty div a img {
+    #projects div a img {
         max-height: 12vw;
     }
 }
 
 @media (min-width: 1600px) {
 
-    #projekty {
+    #projects {
         font-size: 21px;
     }
     

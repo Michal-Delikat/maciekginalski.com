@@ -21,7 +21,7 @@ async function build() {
 
     const imagesHtml = item.fields.projectImages.map((image) => {
       const file = image.fields.file;
-      return `<img src="https:${file.url}" ${file.details.image.height > file.details.image.width ? 'class="pojedyncze"' : ''}>`;
+      return `<img src="https:${file.url}" ${file.details.image.height > file.details.image.width ? 'class="vertical_image"' : ''}>`;
     }).join('');
 
     const fileHtml = `
@@ -35,7 +35,7 @@ async function build() {
           <title>Maciek Ginalski</title>
           <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
           <link rel="stylesheet" href="../css/style.css">
-          <link rel="stylesheet" href="../css/projekt.css">
+          <link rel="stylesheet" href="../css/project.css">
           <script type="module" src="../index.js"></script>
         </head>
         <body>

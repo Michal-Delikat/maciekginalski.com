@@ -1,26 +1,26 @@
-#kontakt {
+#contact {
     text-align: left;
 }
 
-#kontakt h2 {
+#contact h2 {
     font-weight: 300;
     font-size: 23px;
 }
 
-#kontakt h4 {
+#contact h4 {
     text-align: center;
 }
 
-#kontakt p {
+#contact p {
     font-size: 18px;
     font-weight: 200;
 }
 
-#kontakt p a {
+#contact p a {
     font-weight: 400;
 }
 
-#ikony_kontakt a img:hover {
+#ikony_contact a img:hover {
     filter: brightness(30%);
 }
 
@@ -72,7 +72,7 @@
 }
 
 @media (min-width: 748px) {
-    #kontakt {
+    #contact {
         text-align: center;
         margin: 0 auto;
     }
@@ -80,16 +80,16 @@
 
 @media (min-width: 1000px) {
 
-    #kontakt h2 {
+    #contact h2 {
         font-size: 28px;
         margin: 0 0 60px;
     }
 
-    #kontakt h3 {
+    #contact h3 {
         font-size: 26px;
     }
     
-    #kontakt p {
+    #contact p {
         font-size: 22px;
     }
 
