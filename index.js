@@ -2,9 +2,9 @@ class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <header>
-            <div id="menu">
+            <div class="menu">
                 <h1><a href="/index.html">Maciek Ginalski Photography</a></h1>
-                <div id="ikony">
+                <div class="icons">
                     <a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank"><img src="/img/instagram.png"></a>
                     <a href="https://www.facebook.com/MaciekGinalski" target="_blank"><img src="/img/facebook.png"></a>
                 </div>

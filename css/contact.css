@@ -1,26 +1,26 @@
-#contact {
+.contact {
     text-align: left;
 }
 
-#contact h2 {
+.contact h2 {
     font-weight: 300;
     font-size: 23px;
 }
 
-#contact h4 {
+.contact h4 {
     text-align: center;
 }
 
-#contact p {
+.contact p {
     font-size: 18px;
     font-weight: 200;
 }
 
-#contact p a {
+.contact p a {
     font-weight: 400;
 }
 
-#ikony_contact a img:hover {
+.ikony_contact a img:hover {
     filter: brightness(30%);
 }
 
@@ -72,7 +72,7 @@
 }
 
 @media (min-width: 748px) {
-    #contact {
+    .contact {
         text-align: center;
         margin: 0 auto;
     }
@@ -80,44 +80,45 @@
 
 @media (min-width: 1000px) {
 
-    #contact h2 {
+    .contact h2 {
         font-size: 28px;
         margin: 0 0 60px;
     }
 
-    #contact h3 {
+    .contact h3 {
         font-size: 26px;
     }
     
-    #contact p {
+    .contact p {
         font-size: 22px;
     }
 
 }
 
-#privacy-policy {
+.privacy-policy {
     margin: 0 auto;
 }
 
-#privacy-policy, #privacy-policy p {
+.privacy-policy, .privacy-policy p {
     font-size: 11px;
 }
 
-#privacy-policy p {
+.privacy-policy p {
     margin-top: 4px;
 }
 
-#privacy-policy li {
+.privacy-policy li {
     text-align: left;
     list-style-type: circle;
 }
 
 @media (min-width: 748px) {
-    #privacy-policy {
+    .privacy-policy {
         margin: 0 auto;
     }
 
     .privacy-policy-list {
+        padding-left: 22%;
         margin: 11px auto;
     }
 }

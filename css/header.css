@@ -34,23 +34,23 @@ nav ul li a {
     font-weight: 300;
 }
 
-#menu h1 {
+.menu h1 {
     text-align: center;
     margin-top: 2vh;
 }
 
-#ikony {
+.icons {
     width: 30%;
     margin: 15px auto;
     display: flex;
     justify-content: space-evenly;
 }
 
-#ikony a img {
+.icons a img {
     width: 2em;
 }
 
-#ikony a img:hover {
+.icons a img:hover {
     filter: brightness(30%);
 }
 
@@ -71,13 +71,13 @@ nav ul li a {
         margin: 15px 27px;
     }
 
-    #ikony {
+    .icons {
         display: inline-block;
         width: 15%;
         margin: 0;
     }
 
-    #ikony a img {
+    .icons a img {
         width: 38px;
         margin: 0 8px;
     }
