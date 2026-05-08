@@ -8,10 +8,12 @@
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 
+      gtag('consent', 'default', {
+        analytics_storage: 'denied'
+      });
+
 			gtag('config', 'G-52ZZTQ2TBL', {
-        'cookie_flags': 'SameSite=None;Secure',
-        'anonymize_ip': true,
-        'allow_google_signals': false
+        allow_google_signals: false
       });
 		</script>
 		<!-- Font awesome -->
