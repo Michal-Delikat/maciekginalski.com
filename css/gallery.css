@@ -1,0 +1,26 @@
+@media (min-width: 1024px) {
+	main img {
+		margin-bottom: 0;
+	}
+
+	.gallery div {
+		margin-bottom: 1.5vw;
+	}
+	
+	.gallery div {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	
+	.gallery img {
+		width: 28.5vw;
+		height: 19vw;
+	}
+
+	.gallery img.vertical_image {
+		width: 16.7vw;
+		height: 24vw; 
+	}
+}
+

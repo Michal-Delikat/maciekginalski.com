@@ -23,10 +23,10 @@
     border: 0.5px solid darkgray;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
 
     .projects {
-        padding: 50px 10vw;
+        padding: 0 10vw;
     }
 
     .projects div {
@@ -39,32 +39,17 @@
     }
 }
 
-@media (min-width: 1000px) {
-    
-    .projects div a img {
-        max-height: 17vw;
-        margin-bottom: 13px;
-    }
-    
-}
+@media (min-width: 1024px) {
 
-@media (min-width: 1300px) {
-
-    .projects div {
+     .projects div {
         width: 25%;
         margin: 30px 4% ;
         font-size: 18px;
     }
-
+    
     .projects div a img {
         max-height: 12vw;
-    }
-}
-
-@media (min-width: 1600px) {
-
-    .projects {
-        font-size: 21px;
+        margin-bottom: 13px;
     }
     
 }

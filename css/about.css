@@ -5,7 +5,7 @@
     padding: 15px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
     
     .about div {
         width: 1000px;
