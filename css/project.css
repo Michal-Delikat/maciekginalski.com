@@ -1,11 +1,13 @@
 main {
-    padding: 0 20vw;
+    padding: 0 10vw;
     margin-bottom: 2vh;
 }
 
 main img {
     margin-bottom: 5vw;
+    width: 100%;
 }
+
 
 @media (min-width: 1000px) {
 
