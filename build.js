@@ -59,10 +59,10 @@ async function build() {
     fs.writeFileSync(filePath, fileHtml);
 
     return `
-      <div>
+      <div class="project-item">
         <a href="dist/${fileTitle}">
-          <img src="${imageUrl}">
-          ${title}
+          <img class="project-image" src="${imageUrl}">
+          <span class="project-title">${title}</span>
         </a>
       </div>
     `

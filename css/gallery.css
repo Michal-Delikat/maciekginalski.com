@@ -1,6 +1,15 @@
+.gallery img {
+    width: 100%;
+    margin-bottom: 5vw;
+}
+
+.vertical-images-row {
+	display: none;
+}
+
 @media (min-width: 1024px) {
-	main img {
-		margin-bottom: 0;
+	.vertical-images-row {
+		display: block;
 	}
 
 	.gallery div {
@@ -16,6 +25,7 @@
 	.gallery img {
 		width: 28.5vw;
 		height: 19vw;
+		margin-bottom: 0;
 	}
 
 	.gallery img.vertical_image {

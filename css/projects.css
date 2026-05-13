@@ -2,54 +2,47 @@
     padding: 0 10vw;
 }
 
-.projects div {
-    width: 90%;
-    margin: 0 5% 45px;
+.projects-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.project-item {
+    margin-bottom: 45px;
     text-align: center;
-    display: inline-block;
     font-size: 20px;
 }
 
-.projects div a {
+.project-title {
     text-decoration: none;
     font-family: "Quicksand";
 }
 
-.projects div a img {
+.project-image {
+    width: 100%;
     height: 50vw;
-    object-fit: cover;
-    margin-bottom: 10px;
     padding: 6px;
     border: 0.5px solid darkgray;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
-
-    .projects {
-        padding: 0 10vw;
+    .projects-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .projects div {
-        width: 40%;
-        margin: 20px 4%;
+    .project-item {
+        margin: 0 8% 20px;
     }
 
-    .projects div a img {
-        max-height: 22vw;
+    .project-image {
+        height: 22vw;
     }
 }
 
 @media (min-width: 1024px) {
-
-     .projects div {
-        width: 25%;
-        margin: 30px 4% ;
+    .project-item {
+        margin: 0 4% 30px;
         font-size: 18px;
     }
-    
-    .projects div a img {
-        max-height: 12vw;
-        margin-bottom: 13px;
-    }
-    
 }

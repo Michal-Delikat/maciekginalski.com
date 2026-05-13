@@ -1,11 +1,10 @@
 header {
     width: 100%;
     min-height: 20vh;
-    padding-top: 5vh;
+    padding: 5vh 0;
 }
 
 nav {
-    margin: 0 0 40px;
     text-align: center;
 }
 

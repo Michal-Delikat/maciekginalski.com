@@ -49,7 +49,7 @@
 						<img src="img/index_photos/3.jpg">
 					</picture>
 				</div>
-				<div>
+				<div class="vertical-images-row">
 					<picture>
 						<source srcset="img/index_photos/webp/4.webp" type="image/webp">
 						<img src="img/index_photos/4.jpg" class="vertical_image">
@@ -86,11 +86,11 @@
 					</picture>
 				</div>
 			</section>
-			<section class="about">
-				<h2>About me</h2>
-				<div>
-					<img src="img/profile_image.jpg">
-					<p>
+			<section id="about" class="about">
+				<h2 class="section-title">About me</h2>
+				<div class="about-wrapper">
+					<img class="profile-picture" src="img/profile_image.jpg">
+					<p class="about-text">
             Hi, I’m Maciek.<br><br>
             I photograph hotels because I love places with character, good design, and 
             inspiring interiors. I also work with lifestyle photography – including automotive 
@@ -100,139 +100,135 @@
 					</p>
 				</div>
 			</section>
-			<section class="projects">
-				<h2>Projects</h2>
+			<section id="projects" class="projects">
+				<h2 class="section-title">Projects</h2>
+        <div class="projects-gallery">
 				<!-- CONTENTFUL_START -->
 
-      <div>
-        <a href="dist/waldorf_astoria_dubai_difc.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/2OrYb6fdz1MN5Yqn5ME6xT/3501d3275e7a10697a00cb875a889254/14.jpg">
-          Waldorf Astoria Dubai DIFC
-        </a>
-      </div>
-    
-
-      <div>
-        <a href="dist/glemm_by_avenida.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/5Red6KAEdhZ1cluZOByEdd/b8d7b048ec2bc67139bbf366184728a8/DJI_0319-2.jpg">
-          Glemm by AvenidA
-        </a>
-      </div>
-    
-
-      <div>
-        <a href="dist/four_seasons_hotel_budapest.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/46hYI8SYmh0nvQikJOPTFE/0ea8c44b33ad29e1b6df1c3427e14c82/12.jpeg">
-          Four Seasons Hotel Budapest
-        </a>
-      </div>
-    
-
-      <div>
-        <a href="dist/aqua_dome.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/2jE3uDVS0MFknMO4EeEead/fcebaea0994fc371a865f4e513a27245/DJI_0271.jpg">
-          Aqua Dome
-        </a>
-      </div>
-    
-
-      <div>
-        <a href="dist/hôtel_de_crillon.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/X2eaHOj1sXNfSZyePg0fa/3b97575900a2a9f22dbaa9390212c5c8/crillon.jpeg">
-          Hôtel de Crillon
-        </a>
-      </div>
-    
-
-      <div>
-        <a href="dist/mandarin_oriental_hyde_park.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/3yEYJhfPJM7cAeowunNziG/38080931a650efb02f619bb201a22447/mandarin.jpeg">
-          Mandarin Oriental Hyde Park
-        </a>
-      </div>
-    
-
-      <div>
+      <div class="project-item">
         <a href="dist/willa_bizorenda.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/1nx2dnS5PqnDGqPj8EpqUm/34867359c8c9b483d8f0905a4a49050c/16.jpg">
-          Willa Bizorenda
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/5ZjtuGAEtkf1FZJxjLBgQd/d041b2f1adb645010d391837e4fea12a/1.jpg">
+          <span class="project-title">Willa Bizorenda</span>
         </a>
       </div>
     
 
-      <div>
+      <div class="project-item">
         <a href="dist/sheraton_grand_kraków.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/7arygtCGFyjCcwxxyjiTHB/4021d738f04fb52941ad053b6db91c9a/sheraton.jpg">
-          Sheraton Grand Kraków
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/24Lx0IzoC8Fxec7Y1kpnpI/08c78039a8f4e1911580da7dbf19bcff/14.jpg">
+          <span class="project-title">Sheraton Grand Kraków</span>
         </a>
       </div>
     
 
-      <div>
-        <a href="dist/wino_i_talerzyki.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/MaXsUoaCvFL5Vdp4wURwO/7ceb82283c1bbfecccc44c433def3a0c/9.jpg">
-          Wino i Talerzyki
+      <div class="project-item">
+        <a href="dist/four_seasons_hotel_budapest.html">
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/46hYI8SYmh0nvQikJOPTFE/6eca61e160407c38d55a5b69d2fd7c7b/12.jpeg">
+          <span class="project-title">Four Seasons Hotel Budapest</span>
         </a>
       </div>
     
 
-      <div>
+      <div class="project-item">
+        <a href="dist/waldorf_astoria_dubai_difc.html">
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/2OrYb6fdz1MN5Yqn5ME6xT/3501d3275e7a10697a00cb875a889254/14.jpg">
+          <span class="project-title">Waldorf Astoria Dubai DIFC</span>
+        </a>
+      </div>
+    
+
+      <div class="project-item">
+        <a href="dist/glemm_by_avenida.html">
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/5Red6KAEdhZ1cluZOByEdd/b8d7b048ec2bc67139bbf366184728a8/DJI_0319-2.jpg">
+          <span class="project-title">Glemm by AvenidA</span>
+        </a>
+      </div>
+    
+
+      <div class="project-item">
+        <a href="dist/aqua_dome.html">
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/2jE3uDVS0MFknMO4EeEead/fcebaea0994fc371a865f4e513a27245/DJI_0271.jpg">
+          <span class="project-title">Aqua Dome</span>
+        </a>
+      </div>
+    
+
+      <div class="project-item">
+        <a href="dist/hôtel_de_crillon.html">
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/X2eaHOj1sXNfSZyePg0fa/3b97575900a2a9f22dbaa9390212c5c8/crillon.jpeg">
+          <span class="project-title">Hôtel de Crillon</span>
+        </a>
+      </div>
+    
+
+      <div class="project-item">
+        <a href="dist/mandarin_oriental_hyde_park.html">
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/3yEYJhfPJM7cAeowunNziG/38080931a650efb02f619bb201a22447/mandarin.jpeg">
+          <span class="project-title">Mandarin Oriental Hyde Park</span>
+        </a>
+      </div>
+    
+
+      <div class="project-item">
         <a href="dist/radisson_collection_hotel_warsaw.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/20AsWHxaM0ZNsQkyoQ9Bz2/b744ab54801e301dd70736e6714256b2/1.jpeg">
-          Radisson Collection Hotel Warsaw
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/20AsWHxaM0ZNsQkyoQ9Bz2/b744ab54801e301dd70736e6714256b2/1.jpeg">
+          <span class="project-title">Radisson Collection Hotel Warsaw</span>
         </a>
       </div>
     
 
-      <div>
+      <div class="project-item">
         <a href="dist/bukovina.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/3YTsnTnTG12c8ZUUm8rprp/310a7b60cf5c2495c647caf86c00a49c/7.jpg">
-          Bukovina
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/3YTsnTnTG12c8ZUUm8rprp/310a7b60cf5c2495c647caf86c00a49c/7.jpg">
+          <span class="project-title">Bukovina</span>
         </a>
       </div>
     
 
-      <div>
+      <div class="project-item">
         <a href="dist/dziki_dom.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/6X8SYUbN5dqEkWzUY5H6eP/d7b424823d1e2c03e048355c8facf39b/6.jpg">
-          Dziki Dom
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/6X8SYUbN5dqEkWzUY5H6eP/d7b424823d1e2c03e048355c8facf39b/6.jpg">
+          <span class="project-title">Dziki Dom</span>
         </a>
       </div>
     
 
-      <div>
+      <div class="project-item">
         <a href="dist/four_seasons_hotel_praque.html">
-          <img src="https://images.ctfassets.net/7tv4k97cl69q/189aqnUqRsZdVzF4APAcM0/f137f51746ee353c74932dbfe814e048/four_seasons_praga.jpeg">
-          Four Seasons Hotel Praque
+          <img class="project-image" src="https://images.ctfassets.net/7tv4k97cl69q/189aqnUqRsZdVzF4APAcM0/f137f51746ee353c74932dbfe814e048/four_seasons_praga.jpeg">
+          <span class="project-title">Four Seasons Hotel Praque</span>
         </a>
       </div>
     
-      <!-- CONTENTFUL_END -->
+<!-- CONTENTFUL_END -->
+    </div>
 			</section>
-			<section class="contact">
-				<h2>Contact</h2>
-				<h3 class="contact-1">If you are interested in cooperation, please contact me!</h3>
-				<h4 class="contact-2">ginalskimaciek1@gmail.com</h4>
-				<h4 class="contact-3">+48 603 934 203</h4>
-        <p class="contact-4">You can also feel free to write to me on <a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank">Instagram</a>
-           or <a href="https://www.facebook.com/MaciekGinalski" target="_blank">Facebook.</a></p>
-        
-        <div class="accordion">
-            <button class="accordion-header">
-                <span class="accordion-header-text">Privacy Policy</span>
-                <span class="accordion-arrow"><i class="fas fa-chevron-up"></i></span>
-            </button>
-            <div class="accordion-content privacy-policy">
-                <p>The provided personal data are used exclusively for the following purposes:</p>
-                <ul class="privacy-policy-list">
-                    <li>corresponding with the User,</li>
-                    <li>responding to inquiries,</li>
-                    <li>establishing and maintaining business contact.</li>
-                </ul>
-                <p>The data are not used for any other purpose. In particular, they are not shared with third parties and are not used for marketing purposes.</p>
-                <p>Personal data are processed on the basis of Article 6.1.b of the GDPR – when processing is necessary to take steps prior to entering into a contract, and Article 6.1.f of the GDPR – when processing is based on the legitimate interest of the Controller, which is to conduct correspondence.</p>
-                <p>This Privacy Policy is governed by the General Data Protection Regulation (GDPR). For Users outside the European Union, data will be handled with the same level of care and protection as required under GDPR.</p>
-            </div>
+			<section id="contact" class="contact">
+				<h2 class="section-title">Contact</h2>
+        <div class="contact-wrapper">
+          <h3 class="contact-1">If you are interested in cooperation, please contact me!</h3>
+          <h4 class="contact-2">ginalskimaciek1@gmail.com</h4>
+          <h4 class="contact-3">+48 603 934 203</h4>
+          <p class="contact-4">You can also feel free to write to me on <a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank">Instagram</a>
+            or <a href="https://www.facebook.com/MaciekGinalski" target="_blank">Facebook.</a></p>
+          
+          <div class="accordion">
+              <button class="accordion-header">
+                  <span class="accordion-header-text">Privacy Policy</span>
+                  <span class="accordion-arrow"><i class="fas fa-chevron-up"></i></span>
+              </button>
+              <div class="accordion-content privacy-policy">
+                  <p>The provided personal data are used exclusively for the following purposes:</p>
+                  <ul class="privacy-policy-list">
+                      <li>corresponding with the User,</li>
+                      <li>responding to inquiries,</li>
+                      <li>establishing and maintaining business contact.</li>
+                  </ul>
+                  <p>The data are not used for any other purpose. In particular, they are not shared with third parties and are not used for marketing purposes.</p>
+                  <p>Personal data are processed on the basis of Article 6.1.b of the GDPR – when processing is necessary to take steps prior to entering into a contract, and Article 6.1.f of the GDPR – when processing is based on the legitimate interest of the Controller, which is to conduct correspondence.</p>
+                  <p>This Privacy Policy is governed by the General Data Protection Regulation (GDPR). For Users outside the European Union, data will be handled with the same level of care and protection as required under GDPR.</p>
+              </div>
+          </div>
         </div>
 			</section>
 		</main>
