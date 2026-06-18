@@ -59,21 +59,19 @@ async function build() {
     fs.writeFileSync(filePath, fileHtml);
 
     return `
-      <div class="project-item">
-        <a href="dist/${fileTitle}">
-          <img class="project-image" src="${imageUrl}">
-          <span class="project-title">${title}</span>
-        </a>
-      </div>
-    `
-  }).join(`\n`);
+          <div class="project-item">
+            <a href="dist/${fileTitle}">
+              <img class="project-image" src="${imageUrl}">
+              <span class="project-title">${title}</span>
+            </a>
+          </div>`}).join('');
 
   const filePath = path.join(process.cwd(), 'index.html');
   let html = fs.readFileSync(filePath, 'utf-8');
 
   const startMarker = '<!-- CONTENTFUL_START -->';
   const endMarker = '<!-- CONTENTFUL_END -->';
-  const markerBlock = `${startMarker}\n${projectsHtml}\n${endMarker}`;
+  const markerBlock = `${startMarker}${projectsHtml}${endMarker}`;
   const markerRegex = new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`, 'm');
   
   html = html.replace(markerRegex, markerBlock);
