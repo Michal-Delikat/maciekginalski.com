@@ -25,6 +25,7 @@
 }
 
 .accordion {
+    min-height: 400px;
     max-width: 600px;
     margin: 20px auto;
     text-align: center;
