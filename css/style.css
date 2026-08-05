@@ -7,33 +7,25 @@
 /* Footer  styling */
 @import "footer.css";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-1: 'Quicksand', sans-serif;
+    --font-2: 'Wire One', sans-serif;
+
+    --max-width: 1024px;
+}
+
 html {
-    font-family: 'Quicksand', sans-serif;
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-}
-
-h1, h3 {
-    color:#595656;
-    font-weight: lighter;
-}
-  
-h1 {
-    font-family: 'Wire One', sans-serif;
-    font-size: 55px;
-    font-weight: 400;
-    margin: 0 0 5px;
-}
-
-h2 {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 300;
-    margin-top: 0;
 }
 
 a:link {

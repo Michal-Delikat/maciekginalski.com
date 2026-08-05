@@ -1,22 +1,21 @@
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <header>
-            <div id="menu">
+        <header class="header">
+            <div class="inner-header">
                 <h1><a href="/index.html">Maciek Ginalski Photography</a></h1>
-                <div id="ikony">
-                    <a href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank"><img src="/img/instagram.png"></a>
-                    <a href="https://www.facebook.com/MaciekGinalski" target="_blank"><img src="/img/facebook.png"></a>
-                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="/index.html#index">Main page</a></li>
+                        <li><a href="/index.html#o_mnie">About me</a></li>
+                        <li><a href="/index.html#projekty">Projects</a></li>
+                        <li><a href="/index.html#kontakt">Contact</a></li>
+                    </ul>
+                    <a class="instagram-image-container" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank">
+                        <img src="/img/instagram.png" class="instagram-image">
+                    </a>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="/index.html#index">Main page</a></li>
-                    <li><a href="/index.html#o_mnie">About me</a></li>
-                    <li><a href="/index.html#projekty">Projects</a></li>
-                    <li><a href="/index.html#kontakt">Contact</a></li>
-                </ul>
-            </nav>
         </header>		
         `
     }
