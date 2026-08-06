@@ -3,15 +3,14 @@ class MyHeader extends HTMLElement {
         this.innerHTML = `
         <header class="header">
             <div class="inner-header">
-                <h1><a href="/index.html">Maciek Ginalski Photography</a></h1>
+                <a class="logo-anchor" href="/index.html"><img class="logo" src="./img/favicon.ico"></a>
                 <nav class="nav">
-                    <ul>
-                        <li><a href="/index.html#index">Main page</a></li>
-                        <li><a href="/index.html#o_mnie">About me</a></li>
-                        <li><a href="/index.html#projekty">Projects</a></li>
-                        <li><a href="/index.html#kontakt">Contact</a></li>
+                    <ul class="nav-list">
+                        <li><a class="nav-link" href="/index.html#projekty">Projects</a></li>
+                        <li><a class="nav-link" href="/index.html#o_mnie">About</a></li>
+                        <li><a class="nav-link" href="/index.html#kontakt">Contact</a></li>
                     </ul>
-                    <a class="instagram-image-container" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank">
+                    <a class="instagram-anchor" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank">
                         <img src="/img/instagram.png" class="instagram-image">
                     </a>
                 </nav>

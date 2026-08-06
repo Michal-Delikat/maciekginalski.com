@@ -1,11 +1,12 @@
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Wire+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
-/* Header styling */
-@import "header.css";
-/* Footer  styling */
-@import "footer.css";
+@font-face {
+    font-family: 'Minion Pro Regular';
+    src: url('../fonts/MinionPro-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset */
 
 * {
     margin: 0;
@@ -13,49 +14,56 @@
     box-sizing: border-box;
 }
 
+ul {
+    list-style: none;
+}
+
+li {
+    text-decoration: none;
+}
+
+a,
+a:hover,
+a:visited,
+a:active,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Globals */
+
 :root {
-    --font-1: 'Quicksand', sans-serif;
-    --font-2: 'Wire One', sans-serif;
+    --black: hsl(0, 0%, 0%);
+    --transparent-background: rgba(255, 255, 255, 0.5);
+
+    --font-1: 'Minion Pro Regular', serif;
 
     --max-width: 1024px;
+    --header-height: 64px;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
+.header-placeholder {
+    height: var(--header-height);
 }
 
-a:link {
-    color: #595656;
-    text-decoration: none;
+/* Components */
+
+.inner-section {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
 }
 
-a:visited {
-    color: #595656;
+.section-title {
+    text-align: center;
 }
 
-a:hover {
-    color: black;
-}
-
-main img {
-    width: 100%;
-    margin-bottom: 5vw;
-}
-
-p {
-    font-size: 25px;
-    color:#595656;
-}
-
-li {
-    color:#595656;
-}
-
-/* Class selectors */
+/* Button up scroll */
 
 .to-top {
     background: white;

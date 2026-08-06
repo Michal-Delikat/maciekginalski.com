@@ -35,7 +35,7 @@ async function build() {
           <title>Maciek Ginalski</title>
           <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
           <link rel="stylesheet" href="../css/style.css">
-          <link rel="stylesheet" href="../css/projekt.css">
+          <link rel="stylesheet" href="../css/project.css">
           <script type="module" src="../index.js"></script>
         </head>
         <body>
@@ -59,9 +59,11 @@ async function build() {
     fs.writeFileSync(filePath, fileHtml);
 
     return `
-      <div>
-        <a href="dist/${fileTitle}">
-          <img src="${imageUrl}">
+      <div class="project-container">
+        <a class="project-anchor" href="dist/${fileTitle}">
+          <img class="project-image" src="${imageUrl}">
+        </a>
+        <a class="project-title-anchor" href="dist/${fileTitle}">
           ${title}
         </a>
       </div>

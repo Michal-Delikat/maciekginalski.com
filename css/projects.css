@@ -1,0 +1,14 @@
+.project-container {
+    margin-bottom: 2rem;
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 0.75;
+    object-fit: cover;
+}
+
+.project-title-anchor {
+    margin-top: 1rem;
+    font-family: var(--font-1);
+}
