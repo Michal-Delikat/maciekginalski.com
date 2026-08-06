@@ -1,6 +1,13 @@
 .footer {
     width: 100%;
-    height: 2rem;
+}
+
+.footer-privacy-policy {
+    margin-inline: auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: var(--font-1);
 }
 
 .footer-copyright {

@@ -43,30 +43,3 @@
     max-height: 2000px;
     padding: 5px 0 20px;
 }
-
-#privacy-policy {
-    margin: 0 auto;
-}
-
-#privacy-policy, #privacy-policy p {
-    font-size: 11px;
-}
-
-#privacy-policy p {
-    margin-top: 4px;
-}
-
-#privacy-policy li {
-    text-align: left;
-    list-style-type: circle;
-}
-
-@media (min-width: 748px) {
-    #privacy-policy {
-        margin: 0 auto;
-    }
-
-    .privacy-policy-list {
-        margin: 11px auto;
-    }
-}

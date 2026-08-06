@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Minion Pro Regular';
     src: url('../fonts/MinionPro-Regular.otf') format('opentype');
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
@@ -35,7 +35,7 @@ a:focus {
 
 :root {
     --black: hsl(0, 0%, 0%);
-    --transparent-background: rgba(255, 255, 255, 0.5);
+    --transparent-background: rgba(255, 255, 255, 0.4);
 
     --font-1: 'Minion Pro Regular', serif;
 
@@ -45,6 +45,16 @@ a:focus {
 
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; 
 }
 
 .header-placeholder {

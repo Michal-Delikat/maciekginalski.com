@@ -1,14 +1,18 @@
 .about-wrapper {
     display: flex;
     flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .about-image {
     width: 100%;
 }
 
-.about-text {
+.about-bio {
     font-family: var(--font-1);
+    margin: 1rem 0;
+    font-size: 1.25rem;
 }
 
 @media (min-width: 700px) {
@@ -22,6 +26,12 @@
 
     .about-text {
         padding-left: 1rem;
-        margin: 2rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .about-bio {
+        margin: 0;
     }
 }

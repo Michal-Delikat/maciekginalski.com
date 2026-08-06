@@ -6,9 +6,9 @@ class MyHeader extends HTMLElement {
                 <a class="logo-anchor" href="/index.html"><img class="logo" src="/img/favicon.ico"></a>
                 <nav class="nav">
                     <ul class="nav-list">
-                        <li><a class="nav-link" href="/index.html#projekty">Projects</a></li>
-                        <li><a class="nav-link" href="/index.html#o_mnie">About</a></li>
-                        <li><a class="nav-link" href="/index.html#kontakt">Contact</a></li>
+                        <li><a class="nav-link" href="/index.html#projects">Hotels</a></li>
+                        <li><a class="nav-link" href="/index.html#about">About</a></li>
+                        <li><a class="nav-link" href="/index.html#contact">Contact</a></li>
                     </ul>
                     <a class="instagram-anchor" href="https://www.instagram.com/slodkiestudio/" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
@@ -24,6 +24,7 @@ class MyFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <footer class="footer">
+            <a class="footer-privacy-policy" href="/privacy_policy.html">Privacy Policy</a>
             <p class="footer-copyright">&copy; Maciek Ginalski ${new Date().getFullYear()}</p>
         </footer>
         `

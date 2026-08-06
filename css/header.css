@@ -6,6 +6,10 @@
     background-color: var(--transparent-background);
 }
 
+.inner-header {
+    padding: 0 1rem;
+}
+
 .logo-anchor {
     display: flex;
     align-items: center;
