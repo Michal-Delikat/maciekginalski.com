@@ -21,7 +21,7 @@ async function build() {
 
     const imagesHtml = item.fields.projectImages.map((image) => {
       const file = image.fields.file;
-      return `<img src="https:${file.url}" ${file.details.image.height > file.details.image.width ? 'class="pojedyncze"' : ''}>`;
+      return `<div class="photo-container${file.details.image.height > file.details.image.width ? ' singular' : ''}"><img class="photo" src="https:${file.url}"></div>`;
     }).join('');
 
     const fileHtml = `
@@ -36,12 +36,18 @@ async function build() {
           <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
           <link rel="stylesheet" href="../css/style.css">
           <link rel="stylesheet" href="../css/project.css">
+          <link rel="stylesheet" href="../css/header.css">
+          <link rel="stylesheet" href="../css/footer.css">
           <script type="module" src="../index.js"></script>
         </head>
         <body>
           <my-header></my-header>
           <main>
-            ${imagesHtml}
+            <div class="header-placeholder"></div>
+            <h2 class="project-title">${title}</h2>
+            <div class="photo-grid">
+              ${imagesHtml}
+            </div>
           </main>
           <my-footer></my-footer>
           <a href="#" class="to-top">

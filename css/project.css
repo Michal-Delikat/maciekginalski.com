@@ -1,28 +1,34 @@
-main {
-    padding: 50px 20vw;
+.project-title {
+    font-family: var(--font-1);
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-main img {
-    margin-bottom: 5vw;
+.photo-grid {
+    padding-inline: 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
-@media (min-width: 1000px) {
+.photo-container {
+    flex-basis: 100%;
+}
 
-    main div {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+.photo {
+    width: 100%;
+}
 
-    main img {
-        width: 99%;
-        aspect-ratio: 16/9;
-        margin: 0.5%;
-        object-fit: cover;
-    }
+.photo-container.singular > .photo {
+    aspect-ratio: 0.75;
+}
 
-    .pojedyncze {
-        width: 48.7%;
-        aspect-ratio: 4/5;
+@media (min-width: 760px) {
+    .photo-container.singular {
+        flex-basis: calc(50% - 0.5rem);
     }
 }

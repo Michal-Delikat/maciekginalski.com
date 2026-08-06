@@ -1,29 +1,27 @@
-
-#o_mnie p {
-    font-size: 18px;
-    text-align: left;
-    padding: 15px;
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
-@media (min-width: 1000px) {
-    
-    #o_mnie div {
-        width: 1000px;
-        min-height: 40vh;
-        margin: 0 auto;
+.about-image {
+    width: 100%;
+}
+
+.about-text {
+    font-family: var(--font-1);
+}
+
+@media (min-width: 700px) {
+    .about-wrapper {
+        flex-direction: row;
     }
 
-    #o_mnie img {
-        display: inline-block;
-        width: 334px;
-        margin-right: 50px;
-        padding: 0;
+    .about-image {
+        width: 300px;
     }
 
-    #o_mnie p {
-        display: inline-block;
-        width: 472px;
-        margin: 0;
-        line-height: 170%;
+    .about-text {
+        padding-left: 1rem;
+        margin: 2rem auto;
     }
 }

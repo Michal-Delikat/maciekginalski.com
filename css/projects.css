@@ -1,5 +1,11 @@
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
 .project-container {
-    margin-bottom: 2rem;
+    width: 100%;
 }
 
 .project-image {
@@ -9,6 +15,13 @@
 }
 
 .project-title-anchor {
-    margin-top: 1rem;
+    display: block;
+    margin-top: 0.5rem;
     font-family: var(--font-1);
+}
+
+@media (min-width: 700px) {
+    .project-container {
+        max-width: 20rem;
+    }
 }
