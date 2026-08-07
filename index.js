@@ -60,70 +60,70 @@ let previousSlide = document.querySelector(".previous");
 let currentSlide = document.querySelector(".current");
 let nextSlide = document.querySelector(".next");
 
-hero.addEventListener("pointerdown", e => {
-    console.log("pointer down");
-    dragging = true;
-    startX = e.clientX;
-    currentX = startX;
-});
+// hero.addEventListener("pointerdown", e => {
+//     console.log("pointer down");
+//     dragging = true;
+//     startX = e.clientX;
+//     currentX = startX;
+// });
 
-hero.addEventListener("pointermove", e => {
-    // console.log("pointer move");
-    if (!dragging) return;
+// hero.addEventListener("pointermove", e => {
+//     // console.log("pointer move");
+//     if (!dragging) return;
 
-    currentX = e.clientX;
-    const dx = currentX - startX;
-    // console.log(dx);
+//     currentX = e.clientX;
+//     const dx = currentX - startX;
+//     // console.log(dx);
 
-    previousSlide.style.transition = "none";
-    currentSlide.style.transition = "none";
-    nextSlide.style.transition = "none";
+//     previousSlide.style.transition = "none";
+//     currentSlide.style.transition = "none";
+//     nextSlide.style.transition = "none";
 
-    currentSlide.style.transform = `translateX(${dx}px)`;
+//     currentSlide.style.transform = `translateX(${dx}px)`;
 
-    // If swiping left
-    if (dx < 0) {
-        nextSlide.style.transform = `translateX(${hero.offsetWidth + dx}px)`;
-    }
-    // Swiping right
-    else {
-        previousSlide.style.transform = `translateX(${-hero.offsetWidth + dx}px)`;
-    }
-});
+//     // If swiping left
+//     if (dx < 0) {
+//         nextSlide.style.transform = `translateX(${hero.offsetWidth + dx}px)`;
+//     }
+//     // Swiping right
+//     else {
+//         previousSlide.style.transform = `translateX(${-hero.offsetWidth + dx}px)`;
+//     }
+// });
 
-hero.addEventListener("pointerup", () => {
-    console.log("pointer up");
-    dragging = false;
+// hero.addEventListener("pointerup", () => {
+//     console.log("pointer up");
+//     dragging = false;
 
-    const dx = currentX - startX;
-    const threshold = hero.offsetWidth * 0.25;
+//     const dx = currentX - startX;
+//     const threshold = hero.offsetWidth * 0.25;
 
-    previousSlide.style.transition = "";
-    currentSlide.style.transition = "";
-    nextSlide.style.transition = "";
+//     previousSlide.style.transition = "";
+//     currentSlide.style.transition = "";
+//     nextSlide.style.transition = "";
 
-    if (dx > threshold) {
-        // Complete animation
-        console.log("swipe right");
-        currentSlide.style.transform = "translateX(100%)";
-        previousSlide.style.transform = "translateX(0)";
-        rotateSlides("right");
-    } else if (dx < -threshold) {
-        console.log("swipe left");
-        currentSlide.style.transform = "translateX(-100%)";
-        nextSlide.style.transform = "translateX(0)";
-        rotateSlides("left");
-    } else {
-        // Snap back
-        console.log("snap back");
-        previousSlide.style.transform = "translateX(-100%)"
-        currentSlide.style.transform = "translateX(0)";
-        nextSlide.style.transform = "translateX(100%)";
-    }
-    // previousSlide.style.transform = "translateX(-100%)"
-    // currentSlide.style.transform = "translateX(0)";
-    // nextSlide.style.transform = "translateX(100%)"
-});
+//     if (dx > threshold) {
+//         // Complete animation
+//         console.log("swipe right");
+//         currentSlide.style.transform = "translateX(100%)";
+//         previousSlide.style.transform = "translateX(0)";
+//         rotateSlides("right");
+//     } else if (dx < -threshold) {
+//         console.log("swipe left");
+//         currentSlide.style.transform = "translateX(-100%)";
+//         nextSlide.style.transform = "translateX(0)";
+//         rotateSlides("left");
+//     } else {
+//         // Snap back
+//         console.log("snap back");
+//         previousSlide.style.transform = "translateX(-100%)"
+//         currentSlide.style.transform = "translateX(0)";
+//         nextSlide.style.transform = "translateX(100%)";
+//     }
+//     // previousSlide.style.transform = "translateX(-100%)"
+//     // currentSlide.style.transform = "translateX(0)";
+//     // nextSlide.style.transform = "translateX(100%)"
+// });
 
 function rotateSlides(direction) {
     if (direction === "left") {
