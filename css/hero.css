@@ -1,7 +1,7 @@
 .hero {
     position: relative;
     overflow: hidden;
-    height: 100svh;
+    height: 100lvh;
     min-height: 500px;
     touch-action: pan-y;
 }
