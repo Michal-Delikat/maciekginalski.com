@@ -56,9 +56,9 @@ let dragging = false;
 
 const hero = document.querySelector(".hero");
 
-const previousSlide = document.querySelector(".previous");
-const currentSlide = document.querySelector(".current");
-const nextSlide = document.querySelector(".next");
+let previousSlide = document.querySelector(".previous");
+let currentSlide = document.querySelector(".current");
+let nextSlide = document.querySelector(".next");
 
 hero.addEventListener("pointerdown", e => {
     console.log("pointer down");
@@ -68,12 +68,12 @@ hero.addEventListener("pointerdown", e => {
 });
 
 hero.addEventListener("pointermove", e => {
-    console.log("pointer move");
+    // console.log("pointer move");
     if (!dragging) return;
 
     currentX = e.clientX;
     const dx = currentX - startX;
-    console.log(dx);
+    // console.log(dx);
 
     previousSlide.style.transition = "none";
     currentSlide.style.transition = "none";
@@ -107,18 +107,52 @@ hero.addEventListener("pointerup", () => {
         console.log("swipe right");
         currentSlide.style.transform = "translateX(100%)";
         previousSlide.style.transform = "translateX(0)";
+        rotateSlides("right");
     } else if (dx < -threshold) {
-        console.log("swipe left", dx, -threshold);
+        console.log("swipe left");
         currentSlide.style.transform = "translateX(-100%)";
         nextSlide.style.transform = "translateX(0)";
+        rotateSlides("left");
     } else {
         // Snap back
         console.log("snap back");
-        previousSlide.style.transform = "translateX(100%)"
+        previousSlide.style.transform = "translateX(-100%)"
         currentSlide.style.transform = "translateX(0)";
-        nextSlide.style.transform = "translateX(-100%)";
+        nextSlide.style.transform = "translateX(100%)";
     }
     // previousSlide.style.transform = "translateX(-100%)"
     // currentSlide.style.transform = "translateX(0)";
     // nextSlide.style.transform = "translateX(100%)"
 });
+
+function rotateSlides(direction) {
+    if (direction === "left") {
+        // old current becomes previous
+        // old next becomes current
+        // old previous becomes next
+
+        const oldPrevious = previousSlide;
+        previousSlide = currentSlide;
+        currentSlide = nextSlide;
+        nextSlide = oldPrevious;
+
+    } else {
+        // old current becomes next
+        // old previous becomes current
+        // old next becomes previous
+
+        const oldNext = nextSlide;
+        nextSlide = currentSlide;
+        currentSlide = previousSlide;
+        previousSlide = oldNext;
+    }
+
+    // Reset positions
+    // previousSlide.style.transition = "none";
+    // currentSlide.style.transition = "none";
+    // nextSlide.style.transition = "none";
+
+    previousSlide.style.transform = "translateX(-100%)";
+    currentSlide.style.transform = "translateX(0)";
+    nextSlide.style.transform = "translateX(100%)";
+}
