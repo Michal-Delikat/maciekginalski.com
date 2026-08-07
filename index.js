@@ -47,3 +47,78 @@ window.addEventListener("scroll", () => {
         toTop.classList.remove("active")
     }
 })
+
+/* Hero Carousel */
+
+let startX = 0;
+let currentX = 0;
+let dragging = false;
+
+const hero = document.querySelector(".hero");
+
+const previousSlide = document.querySelector(".previous");
+const currentSlide = document.querySelector(".current");
+const nextSlide = document.querySelector(".next");
+
+hero.addEventListener("pointerdown", e => {
+    console.log("pointer down");
+    dragging = true;
+    startX = e.clientX;
+    currentX = startX;
+});
+
+hero.addEventListener("pointermove", e => {
+    console.log("pointer move");
+    if (!dragging) return;
+
+    currentX = e.clientX;
+    const dx = currentX - startX;
+    console.log(dx);
+
+    previousSlide.style.transition = "none";
+    currentSlide.style.transition = "none";
+    nextSlide.style.transition = "none";
+
+    currentSlide.style.transform = `translateX(${dx}px)`;
+
+    // If swiping left
+    if (dx < 0) {
+        nextSlide.style.transform = `translateX(${hero.offsetWidth + dx}px)`;
+    }
+    // Swiping right
+    else {
+        previousSlide.style.transform = `translateX(${-hero.offsetWidth + dx}px)`;
+    }
+});
+
+hero.addEventListener("pointerup", () => {
+    console.log("pointer up");
+    dragging = false;
+
+    const dx = currentX - startX;
+    const threshold = hero.offsetWidth * 0.25;
+
+    previousSlide.style.transition = "";
+    currentSlide.style.transition = "";
+    nextSlide.style.transition = "";
+
+    if (dx > threshold) {
+        // Complete animation
+        console.log("swipe right");
+        currentSlide.style.transform = "translateX(100%)";
+        previousSlide.style.transform = "translateX(0)";
+    } else if (dx < -threshold) {
+        console.log("swipe left", dx, -threshold);
+        currentSlide.style.transform = "translateX(-100%)";
+        nextSlide.style.transform = "translateX(0)";
+    } else {
+        // Snap back
+        console.log("snap back");
+        previousSlide.style.transform = "translateX(100%)"
+        currentSlide.style.transform = "translateX(0)";
+        nextSlide.style.transform = "translateX(-100%)";
+    }
+    // previousSlide.style.transform = "translateX(-100%)"
+    // currentSlide.style.transform = "translateX(0)";
+    // nextSlide.style.transform = "translateX(100%)"
+});
