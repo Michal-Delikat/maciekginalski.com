@@ -1,24 +1,6 @@
 .header {
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
     background-color: var(--transparent-background);
-}
-
-.inner-header {
-    padding: 0 1rem;
-}
-
-.logo-anchor {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-}
-
-.logo {
-    width: 2rem;
-    height: 2rem;
 }
 
 .inner-header {
@@ -28,6 +10,24 @@
     max-width: var(--max-width);
     margin: 0 auto;
 }
+
+.logo-anchor {
+    padding: 1rem;
+    font-family: var(--font-1);
+}
+
+.logo-text {
+    display: block;
+}
+
+.logo-top {
+    letter-spacing: 0.09em;
+    font-size: 18px;
+}
+
+.logo-bottom {
+    font-size: 14px;
+}   
 
 .nav {
     display: flex;

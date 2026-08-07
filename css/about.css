@@ -10,9 +10,28 @@
 }
 
 .about-bio {
-    font-family: var(--font-1);
+    /* font-family: var(--font-1); */
     margin: 1rem 0;
     font-size: 1.25rem;
+    letter-spacing: 0.03em;
+}
+
+.contact-heading {
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    font-family: var(--font-1);
+}
+
+.privacy-policy {
+    margin-inline: auto;
+    display: block;
+    text-align: left;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
 }
 
 @media (min-width: 700px) {

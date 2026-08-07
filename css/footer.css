@@ -1,16 +1,15 @@
 .footer {
     width: 100%;
-}
-
-.footer-privacy-policy {
-    margin-inline: auto;
-    display: block;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-family: var(--font-1);
+    padding: 1rem 0;
 }
 
 .footer-copyright {
     text-align: center;
     font-family: var(--font-1);
+}
+
+.footer-instagram-anchor {
+    display: block;
+    margin: 1rem auto 0;
+    width: 1rem;
 }

@@ -67,7 +67,9 @@ async function build() {
     return `
       <div class="project-container">
         <a class="project-anchor" href="dist/${fileTitle}">
-          <img class="project-image" src="${imageUrl}">
+          <div class="project-image-wrapper">
+            <img class="project-image" src="${imageUrl}">
+          </div>
           <span class="project-title">${title}</span>
         </a>
       </div>

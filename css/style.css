@@ -57,10 +57,6 @@ main {
     flex: 1; 
 }
 
-.header-placeholder {
-    height: var(--header-height);
-}
-
 /* Components */
 
 .inner-section {
