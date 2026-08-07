@@ -5,7 +5,7 @@ class MyHeader extends HTMLElement {
             <div class="inner-header">
                 <a class="logo-anchor" href="/index.html">
                     <span class="logo-text logo-top">MACIEK GINALSKI</span>
-                    <span class="logo-text logo-bottom">Hotels & Lifestyle Photography</span>
+                    <span class="logo-text logo-bottom">Hotel & Lifestyle Photography</span>
                 </a>
                 <nav class="nav">
                     <ul class="nav-list">

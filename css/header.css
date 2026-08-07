@@ -1,6 +1,5 @@
 .header {
     width: 100%;
-    background-color: var(--transparent-background);
 }
 
 .inner-header {
@@ -21,7 +20,7 @@
 }
 
 .logo-top {
-    letter-spacing: 0.09em;
+    letter-spacing: 0.07em;
     font-size: 18px;
 }
 
