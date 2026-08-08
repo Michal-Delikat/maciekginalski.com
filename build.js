@@ -42,7 +42,7 @@ async function build() {
         </head>
         <body>
           <my-header></my-header>
-          <main>
+          <main class="project-main">
             <div class="header-placeholder"></div>
             <h2 class="project-title">${title}</h2>
             <div class="photo-grid">

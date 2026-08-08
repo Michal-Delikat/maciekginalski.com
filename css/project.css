@@ -1,3 +1,7 @@
+.project-main {
+    padding: 2rem 0 0;
+}
+
 .project-title {
     font-family: var(--font-1);
     text-align: center;
@@ -5,7 +9,7 @@
 }
 
 .photo-grid {
-    padding-inline: 1rem;
+    padding-inline: 2rem;
     max-width: var(--max-width);
     margin-inline: auto;
     display: flex;

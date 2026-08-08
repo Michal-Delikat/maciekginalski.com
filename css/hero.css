@@ -29,3 +29,15 @@
 .next {
     transform: translateX(-100%);
 }
+
+.powerfull-heading {
+    text-align: center;
+    padding: 3vh 1rem;
+    width: 100%;
+    font-family: var(--font-1);
+    letter-spacing: 0.02em;
+    position: absolute;
+    bottom: 0;
+    color: black;
+    background-color: rgba(255, 255, 255, 1);
+}
