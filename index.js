@@ -7,7 +7,26 @@ class MyHeader extends HTMLElement {
                     <span class="logo-text logo-top">MACIEK GINALSKI</span>
                     <span class="logo-text logo-bottom">Hotel & Lifestyle Photography</span>
                 </a>
-                <nav class="nav">
+
+                <nav class="nav-desktop">
+                    <ul class="nav-list nav-list-desktop">
+                        <li><a class="nav-link" href="/index.html#projects">Hotels</a></li>
+                        <li><a class="nav-link" href="/index.html#about">About</a></li>
+                    </ul>
+                    <a class="instagram-anchor header-instagram-desktop" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
+                    </a>
+                </nav>
+
+                <div class="hamburger-wrapper">
+                    <button class="hamburger" id="menu-toggle" aria-label="Menu">
+                        <span class="top-bar"></span>
+                        <span class="middle-bar"></span>
+                        <span class="bottom-bar"></span>
+                    </button>
+                </div>
+
+                <nav class="nav-mobile">
                     <ul class="nav-list">
                         <li><a class="nav-link" href="/index.html#projects">Hotels</a></li>
                         <li><a class="nav-link" href="/index.html#about">About</a></li>
@@ -15,6 +34,10 @@ class MyHeader extends HTMLElement {
                     <a class="instagram-anchor" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
                     </a>
+                    <button class="menu-toggle" aria-expanded="false">
+                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                        <span class="sr-only">Menu</span>
+                    </button>
                 </nav>
             </div>
         </header>		
@@ -37,6 +60,46 @@ class MyFooter extends HTMLElement {
 
 customElements.define('my-header', MyHeader);
 customElements.define('my-footer', MyFooter);
+
+/* Menu toggle */ 
+
+let isOpen = false;
+
+const btn = document.getElementById('menu-toggle');
+
+btn.addEventListener('click', function () {
+  isOpen = !isOpen;
+  this.classList.toggle('active');
+
+  const [top, mid, bot] = this.querySelectorAll('span');
+  const dir = isOpen ? 'normal' : 'reverse';
+
+  // Anuluj poprzednie animacje zanim zaczniesz nowe
+  [top, mid, bot].forEach(s => s.getAnimations().forEach(a => a.cancel()));
+
+  top.animate([
+    { transform: 'translateY(0) rotate(0deg)' },
+    { transform: 'translateY(8px) rotate(0deg)', offset: 0.5 },
+    { transform: 'translateY(8px) rotate(45deg)' }
+  ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
+
+  mid.animate([
+    { opacity: 1 },
+    { opacity: 0 }
+  ], {
+    duration: 200,
+    easing: 'ease',
+    fill: 'both',
+    direction: dir,
+    delay: isOpen ? 0 : 200   // przy zamykaniu czeka aż linie się rozejdą
+  });
+
+  bot.animate([
+    { transform: 'translateY(0) rotate(0deg)' },
+    { transform: 'translateY(-8px) rotate(0deg)', offset: 0.5 },
+    { transform: 'translateY(-8px) rotate(-45deg)' }
+  ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
+});
 
 /* To top widget */
 
