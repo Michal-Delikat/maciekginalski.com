@@ -27,17 +27,13 @@ class MyHeader extends HTMLElement {
                 </div>
 
                 <nav class="nav-mobile">
-                    <ul class="nav-list">
+                    <ul class="nav-list-mobile">
                         <li><a class="nav-link" href="/index.html#projects">Hotels</a></li>
                         <li><a class="nav-link" href="/index.html#about">About</a></li>
                     </ul>
                     <a class="instagram-anchor" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
                     </a>
-                    <button class="menu-toggle" aria-expanded="false">
-                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-                        <span class="sr-only">Menu</span>
-                    </button>
                 </nav>
             </div>
         </header>		
@@ -66,39 +62,41 @@ customElements.define('my-footer', MyFooter);
 let isOpen = false;
 
 const btn = document.getElementById('menu-toggle');
+const header = document.querySelector('header');
 
 btn.addEventListener('click', function () {
-  isOpen = !isOpen;
-  this.classList.toggle('active');
+    isOpen = !isOpen;
+    this.classList.toggle('active');
 
-  const [top, mid, bot] = this.querySelectorAll('span');
-  const dir = isOpen ? 'normal' : 'reverse';
+    header.classList.toggle('active');
 
-  // Anuluj poprzednie animacje zanim zaczniesz nowe
-  [top, mid, bot].forEach(s => s.getAnimations().forEach(a => a.cancel()));
+    const [top, mid, bot] = this.querySelectorAll('span');
+    const dir = isOpen ? 'normal' : 'reverse';
 
-  top.animate([
-    { transform: 'translateY(0) rotate(0deg)' },
-    { transform: 'translateY(8px) rotate(0deg)', offset: 0.5 },
-    { transform: 'translateY(8px) rotate(45deg)' }
-  ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
+    [top, mid, bot].forEach(s => s.getAnimations().forEach(a => a.cancel()));
 
-  mid.animate([
-    { opacity: 1 },
-    { opacity: 0 }
-  ], {
-    duration: 200,
-    easing: 'ease',
-    fill: 'both',
-    direction: dir,
-    delay: isOpen ? 0 : 200   // przy zamykaniu czeka aż linie się rozejdą
-  });
+    top.animate([
+        { transform: 'translateY(0) rotate(0deg)' },
+        { transform: 'translateY(8px) rotate(0deg)', offset: 0.5 },
+        { transform: 'translateY(8px) rotate(45deg)' }
+    ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
 
-  bot.animate([
-    { transform: 'translateY(0) rotate(0deg)' },
-    { transform: 'translateY(-8px) rotate(0deg)', offset: 0.5 },
-    { transform: 'translateY(-8px) rotate(-45deg)' }
-  ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
+    mid.animate([
+        { opacity: 1 },
+        { opacity: 0 }
+    ], {
+        duration: 200,
+        easing: 'ease',
+        fill: 'both',
+        direction: dir,
+        delay: isOpen ? 0 : 200
+    });
+
+    bot.animate([
+        { transform: 'translateY(0) rotate(0deg)' },
+        { transform: 'translateY(-8px) rotate(0deg)', offset: 0.5 },
+        { transform: 'translateY(-8px) rotate(-45deg)' }
+    ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
 });
 
 /* To top widget */

@@ -35,6 +35,7 @@ a:focus {
 
 :root {
     --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 100%, 100%);
     --transparent-background: rgba(255, 255, 255, 0.4);
 
     --font-1: 'Minion Pro Regular', serif;
