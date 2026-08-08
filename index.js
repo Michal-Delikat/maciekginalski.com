@@ -38,6 +38,8 @@ class MyFooter extends HTMLElement {
 customElements.define('my-header', MyHeader);
 customElements.define('my-footer', MyFooter);
 
+/* To top widget */
+
 const toTop = document.querySelector(".to-top");
 
 window.addEventListener("scroll", () => {
@@ -47,6 +49,15 @@ window.addEventListener("scroll", () => {
         toTop.classList.remove("active")
     }
 })
+
+/* Hero Height */
+
+function setVH() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVH();
 
 /* Hero Carousel */
 
