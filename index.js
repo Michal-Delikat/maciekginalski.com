@@ -164,24 +164,25 @@ function rotateSlides(direction) {
 
 // Auto-play
 setInterval(() => {
-    if (dragging) return; // ← nie animuj podczas swipe'a
+    if (dragging) return;
 
     const a1 = currentSlide.animate([
         { transform: 'translateX(0%)' },
         { transform: 'translateX(-100%)' }
-    ], { duration: 800, easing: 'ease', fill: 'forwards' });
+    ], { duration: 800, easing: 'ease' }); // ← bez fill: 'forwards'
 
     const a2 = nextSlide.animate([
         { transform: 'translateX(100%)' },
         { transform: 'translateX(0%)' }
-    ], { duration: 800, easing: 'ease', fill: 'forwards' });
+    ], { duration: 800, easing: 'ease' }); // ← bez fill: 'forwards'
+
+    // Animacja nadpisuje te style wizualnie podczas trwania,
+    // ale gdy skończy — przeglądarka je odczyta i nie będzie skoku
+    currentSlide.style.transform = 'translateX(-100%)';
+    nextSlide.style.transform = 'translateX(0%)';
 
     Promise.all([a1.finished, a2.finished]).then(() => {
-        currentSlide.style.transform = 'translateX(-100%)';
-        nextSlide.style.transform = 'translateX(0%)';
-        a1.cancel();
-        a2.cancel();
-        rotateSlides("left");
+        rotateSlides("left"); // ← bez commitAndCancel
     });
 }, 5000);
 /*
