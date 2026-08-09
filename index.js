@@ -10,8 +10,8 @@ class MyHeader extends HTMLElement {
 
                 <nav class="nav-desktop">
                     <ul class="nav-list nav-list-desktop">
-                        <li><a class="nav-link" href="/index.html#projects">Hotels</a></li>
-                        <li><a class="nav-link" href="/index.html#about">About</a></li>
+                        <li><a class="nav-link" href="/index.html#projects">Featured Hotels & Resorts</a></li>
+                        <li><a class="nav-link" href="/index.html#about">About me</a></li>
                     </ul>
                     <a class="instagram-anchor header-instagram-desktop" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
@@ -61,17 +61,13 @@ customElements.define('my-footer', MyFooter);
 
 let isOpen = false;
 
-const btn = document.getElementById('menu-toggle');
+const hamburger = document.getElementById('menu-toggle');
 const header = document.querySelector('header');
+const navListMobile = document.querySelector('.nav-list-mobile');
 
-btn.addEventListener('click', function () {
-    isOpen = !isOpen;
-    this.classList.toggle('active');
-
-    header.classList.toggle('active');
-
-    const [top, mid, bot] = this.querySelectorAll('span');
-    const dir = isOpen ? 'normal' : 'reverse';
+const animateMenu = (dir = true) => {
+    dir = dir ? 'normal' : 'reverse';
+    const [top, mid, bot] = hamburger.querySelectorAll('span');
 
     [top, mid, bot].forEach(s => s.getAnimations().forEach(a => a.cancel()));
 
@@ -97,11 +93,27 @@ btn.addEventListener('click', function () {
         { transform: 'translateY(-8px) rotate(0deg)', offset: 0.5 },
         { transform: 'translateY(-8px) rotate(-45deg)' }
     ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
+}
+
+hamburger.addEventListener('click', function () {
+    isOpen = !isOpen;
+
+    header.classList.toggle('active');
+
+    animateMenu(isOpen);
 });
 
-/* TODO: Hide mobile menu when option is clicked */ 
+/* Hide mobile menu when option is clicked */ 
 
+const closeMenu = () => {
+    isOpen = !isOpen;
+    header.classList.toggle('active');
+    animateMenu(false);
+}
 
+navListMobile.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
 
 /* To top widget */
 

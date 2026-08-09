@@ -72,6 +72,24 @@ main {
     margin-bottom: 1rem;
 }
 
+.powerfull-heading {
+    text-align: center;
+    padding: 3vh 1rem;
+    width: 100%;
+    font-family: var(--font-1);
+    letter-spacing: 0.02em;
+    background-color: var(--white);
+    margin-top: 1rem;
+}
+
+.powerfull-subheading {
+    position: absolute;
+    text-align: center;
+    bottom: 4%;
+    width: 100%;
+    font-family: var(--font-1);
+}
+
 /* Button up scroll */
 
 .to-top {

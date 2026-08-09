@@ -6,7 +6,6 @@
     height: calc(var(--vh, 1vh) * 100);
     min-height: 500px;
     touch-action: pan-y;
-    color: var(--white);
 }
 
 .slide {
@@ -30,15 +29,4 @@
 
 .next {
     transform: translateX(-100%);
-}
-
-.powerfull-heading {
-    text-align: center;
-    padding: 3vh 1rem;
-    width: 100%;
-    font-family: var(--font-1);
-    letter-spacing: 0.02em;
-    position: absolute;
-    bottom: 0;
-    /* background-color: var(--transparent-background); */
 }
