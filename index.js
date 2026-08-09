@@ -142,12 +142,6 @@ previousSlide.style.transform = 'translateX(-100%)'; // ← bug: było 100%
 currentSlide.style.transform = 'translateX(0%)';
 nextSlide.style.transform = 'translateX(100%)';
 
-// Pomocnicza: zapisz pozycję do inline style i usuń animację
-function commitAndCancel(anim) {
-    try { anim.commitStyles(); } catch (e) {}
-    anim.cancel();
-}
-
 function rotateSlides(direction) {
     if (direction === "left") {
         previousSlide = currentSlide;
@@ -183,8 +177,10 @@ setInterval(() => {
     ], { duration: 800, easing: 'ease', fill: 'forwards' });
 
     Promise.all([a1.finished, a2.finished]).then(() => {
-        commitAndCancel(a1);
-        commitAndCancel(a2);
+        currentSlide.style.transform = 'translateX(-100%)';
+        nextSlide.style.transform = 'translateX(0%)';
+        a1.cancel();
+        a2.cancel();
         rotateSlides("left");
     });
 }, 5000);
