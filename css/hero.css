@@ -36,7 +36,7 @@
     text-align: center;
     padding: 3vh 1rem;
     width: 100%;
-    font-family: "Cormorant Garamond";
+    font-family: var(--font-1);
     letter-spacing: 0.02em;
     position: absolute;
     bottom: 0;

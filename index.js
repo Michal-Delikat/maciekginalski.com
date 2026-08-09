@@ -57,7 +57,7 @@ class MyFooter extends HTMLElement {
 customElements.define('my-header', MyHeader);
 customElements.define('my-footer', MyFooter);
 
-/* Menu toggle */ 
+/* Toggle Mobile Menu */ 
 
 let isOpen = false;
 
@@ -99,6 +99,10 @@ btn.addEventListener('click', function () {
     ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
 });
 
+/* TODO: Hide mobile menu when option is clicked */ 
+
+
+
 /* To top widget */
 
 const toTop = document.querySelector(".to-top");
@@ -137,8 +141,7 @@ let startX = 0;
 let currentX = 0;
 let dragging = false;
 
-// Pozycje startowe
-previousSlide.style.transform = 'translateX(-100%)'; // ← bug: było 100%
+previousSlide.style.transform = 'translateX(-100%)';
 currentSlide.style.transform = 'translateX(0%)';
 nextSlide.style.transform = 'translateX(100%)';
 
@@ -150,7 +153,10 @@ function rotateSlides(direction) {
         currentIndex = nextIndex;
         nextIndex = (currentIndex - 1 + slides.length) % slides.length;
         nextSlide = slides[nextIndex];
-        nextSlide.style.transform = 'translateX(100%)'; // nowy slajd czeka po prawej
+        nextSlide.style.transform = 'translateX(100%)';
+
+        nextSlide.style.transition = 'none';
+        nextSlide.style.transform = 'translate(100%)';
     } else {
         nextSlide = currentSlide;
         nextIndex = currentIndex;
@@ -158,7 +164,9 @@ function rotateSlides(direction) {
         currentIndex = previousIndex;
         previousIndex = (currentIndex + 1) % slides.length;
         previousSlide = slides[previousIndex];
-        previousSlide.style.transform = 'translateX(-100%)'; // nowy slajd czeka po lewej
+        previousSlide.style.transform = 'translateX(-100%)';
+        nextSlide.style.transition = 'none';
+        nextSlide.style.transform = 'translate(-100%)';
     }
 }
 
@@ -169,20 +177,18 @@ setInterval(() => {
     const a1 = currentSlide.animate([
         { transform: 'translateX(0%)' },
         { transform: 'translateX(-100%)' }
-    ], { duration: 800, easing: 'ease' }); // ← bez fill: 'forwards'
+    ], { duration: 800, easing: 'ease' });
 
     const a2 = nextSlide.animate([
         { transform: 'translateX(100%)' },
         { transform: 'translateX(0%)' }
-    ], { duration: 800, easing: 'ease' }); // ← bez fill: 'forwards'
+    ], { duration: 800, easing: 'ease' });
 
-    // Animacja nadpisuje te style wizualnie podczas trwania,
-    // ale gdy skończy — przeglądarka je odczyta i nie będzie skoku
     currentSlide.style.transform = 'translateX(-100%)';
     nextSlide.style.transform = 'translateX(0%)';
 
     Promise.all([a1.finished, a2.finished]).then(() => {
-        rotateSlides("left"); // ← bez commitAndCancel
+        rotateSlides("left");
     });
 }, 5000);
 /*
