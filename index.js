@@ -148,6 +148,26 @@ function commitAndCancel(anim) {
     anim.cancel();
 }
 
+function rotateSlides(direction) {
+    if (direction === "left") {
+        previousSlide = currentSlide;
+        previousIndex = currentIndex;
+        currentSlide = nextSlide;
+        currentIndex = nextIndex;
+        nextIndex = (currentIndex - 1 + slides.length) % slides.length;
+        nextSlide = slides[nextIndex];
+        nextSlide.style.transform = 'translateX(100%)'; // nowy slajd czeka po prawej
+    } else {
+        nextSlide = currentSlide;
+        nextIndex = currentIndex;
+        currentSlide = previousSlide;
+        currentIndex = previousIndex;
+        previousIndex = (currentIndex + 1) % slides.length;
+        previousSlide = slides[previousIndex];
+        previousSlide.style.transform = 'translateX(-100%)'; // nowy slajd czeka po lewej
+    }
+}
+
 // Auto-play
 setInterval(() => {
     if (dragging) return; // ← nie animuj podczas swipe'a
@@ -168,7 +188,7 @@ setInterval(() => {
         rotateSlides("left");
     });
 }, 5000);
-
+/*
 hero.addEventListener("pointerdown", e => {
     // Zatrzymaj i zapisz bieżące animacje — fill:forwards blokowałoby style.transform
     [previousSlide, currentSlide, nextSlide].forEach(slide => {
@@ -297,3 +317,4 @@ function rotateSlides(direction) {
         previousSlide.style.transform = 'translateX(-100%)'; // nowy slajd czeka po lewej
     }
 }
+*/
