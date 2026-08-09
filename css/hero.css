@@ -6,6 +6,7 @@
     height: calc(var(--vh, 1vh) * 100);
     min-height: 500px;
     touch-action: pan-y;
+    color: var(--white);
 }
 
 .slide {
@@ -14,6 +15,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     z-index: -999;
     transition: transform .25s ease;
 }
@@ -34,10 +36,9 @@
     text-align: center;
     padding: 3vh 1rem;
     width: 100%;
-    font-family: var(--font-1);
+    font-family: "Cormorant Garamond";
     letter-spacing: 0.02em;
     position: absolute;
     bottom: 0;
-    color: black;
-    background-color: rgba(255, 255, 255, 1);
+    /* background-color: var(--transparent-background); */
 }
