@@ -10,7 +10,7 @@
 }
 
 .index .header {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: transparent;
 }
 
 .index .header.scrolled {

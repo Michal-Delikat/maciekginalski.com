@@ -60,14 +60,21 @@ customElements.define('my-footer', MyFooter);
 const hero = document.querySelector('.hero');
 const header = document.querySelector('.header');
 
-const observer = new IntersectionObserver((entries) => {
-    console.log(entries)
-    if (entries[0].intersectionRatio < 0.7) {
-        header.classList.toggle('scrolled');
-    }
-}, { threshold: 0.5});
+// const observer = new IntersectionObserver((entries) => {
+//     if (entries[0].intersectionRatio < 1) {
+//         header.classList.toggle('scrolled');
+//     }
+// }, { threshold: 0.8});
 
-observer.observe(hero);
+// observer.observe(hero);
+
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled")
+    }
+})
 
 /* Toggle Mobile Menu */ 
 
@@ -356,7 +363,7 @@ const observer2 = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+            observer2.unobserve(entry.target);
         }
     });
 }, { threshold: 0.2 });
