@@ -1,8 +1,11 @@
 .header {
     width: 100%;
     height: var(--header-height);
-    background-color: rgba(0, 0, 0, 0.2);
     transition: background-color 0.4s ease;
+}
+
+.hero .header {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .header.active {
@@ -25,6 +28,10 @@
 
 .logo-text {
     display: block;
+    color: var(--black);
+}
+
+.hero .logo-text {
     color: var(--white);
 }
 
@@ -65,7 +72,11 @@
   display: block;
   width: 100%;
   height: 2px;
-  background: var(--white);
+  background: var(--black);
+}
+
+.hero .hamburger span {
+    background: var(--white);
 }
 
 .header.active .hamburger span {
@@ -108,7 +119,11 @@
 }
 
 .nav-link {
-    font-family: var(--font-1);
+    font-family: var(--font-2);
+}
+
+.nav-link:hover {
+    color: var(--light-gray);
 }
 
 .instagram-anchor {
@@ -116,6 +131,10 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
+}
+
+.instagram-anchor:hover {
+    color: var(--light-gray);
 }
 
 .instagram-image {
@@ -130,5 +149,10 @@
 
     .nav-desktop {
         display: flex;
+        color: var(--black);
+    }
+
+    .hero .nav-desktop {
+        color: var(--white);
     }
 }

@@ -10,8 +10,8 @@ class MyHeader extends HTMLElement {
 
                 <nav class="nav-desktop">
                     <ul class="nav-list nav-list-desktop">
-                        <li><a class="nav-link" href="/index.html#projects">Featured Hotels & Resorts</a></li>
-                        <li><a class="nav-link" href="/index.html#about">About me</a></li>
+                        <li><a class="nav-link" href="/index.html#projects">FEATURED HOTELS & RESORTS</a></li>
+                        <li><a class="nav-link" href="/index.html#about">ABOUT ME</a></li>
                     </ul>
                     <a class="instagram-anchor header-instagram-desktop" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
@@ -28,8 +28,8 @@ class MyHeader extends HTMLElement {
 
                 <nav class="nav-mobile">
                     <ul class="nav-list-mobile">
-                        <li><a class="nav-link" href="/index.html#projects">Hotels</a></li>
-                        <li><a class="nav-link" href="/index.html#about">About</a></li>
+                        <li><a class="nav-link" href="/index.html#projects">FEATURED HOTELS & RESORTS</a></li>
+                        <li><a class="nav-link" href="/index.html#about">ABOUT ME</a></li>
                     </ul>
                     <a class="instagram-anchor" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>

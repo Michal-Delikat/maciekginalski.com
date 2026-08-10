@@ -13,3 +13,7 @@
     margin: 1rem auto 0;
     width: 1rem;
 }
+
+.footer-instagram-anchor:hover {
+    color: var(--light-gray);
+}
