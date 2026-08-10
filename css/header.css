@@ -1,11 +1,20 @@
 .header {
     width: 100%;
     height: var(--header-height);
-    transition: background-color 0.4s ease;
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-.hero .header {
+.index .header {
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.index .header.scrolled {
+    background-color: var(--white);
 }
 
 .header.active {
@@ -31,8 +40,12 @@
     color: var(--black);
 }
 
-.hero .logo-text {
+.index .logo-text {
     color: var(--white);
+}
+
+.index .header.scrolled .logo-text  {
+    color: var(--black);
 }
 
 .header.active .logo-text {
@@ -75,8 +88,12 @@
   background: var(--black);
 }
 
-.hero .hamburger span {
+.index .hamburger span {
     background: var(--white);
+}
+
+.index .header.scrolled .hamburger span {
+    background: var(--black);
 }
 
 .header.active .hamburger span {
@@ -142,6 +159,10 @@
     height: 2rem;
 }
 
+.nav-list-desktop {
+    margin-right: 1rem;
+}
+
 @media (min-width: 768px) {
     .hamburger-wrapper {
         display: none;
@@ -152,7 +173,15 @@
         color: var(--black);
     }
 
-    .hero .nav-desktop {
+    .index .nav-desktop {
         color: var(--white);
+    }
+
+    .index .header.scrolled .nav-desktop {
+        color: var(--black);
+    }
+
+    .nav-link {
+        padding: 0.5rem;
     }
 }

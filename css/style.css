@@ -62,6 +62,11 @@ main {
     flex: 1; 
 }
 
+.header-placeholder {
+    width: 100%;
+    height: var(--header-height);
+}
+
 /* Components */
 
 .inner-section {

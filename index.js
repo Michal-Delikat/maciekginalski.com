@@ -57,12 +57,23 @@ class MyFooter extends HTMLElement {
 customElements.define('my-header', MyHeader);
 customElements.define('my-footer', MyFooter);
 
+const hero = document.querySelector('.hero');
+const header = document.querySelector('.header');
+
+const observer = new IntersectionObserver((entries) => {
+    console.log(entries)
+    if (entries[0].intersectionRatio < 0.7) {
+        header.classList.toggle('scrolled');
+    }
+}, { threshold: 0.5});
+
+observer.observe(hero);
+
 /* Toggle Mobile Menu */ 
 
 let isOpen = false;
 
 const hamburger = document.getElementById('menu-toggle');
-const header = document.querySelector('header');
 const navListMobile = document.querySelector('.nav-list-mobile');
 
 const animateMenu = (dir = true) => {
@@ -142,7 +153,6 @@ screen.orientation.addEventListener("change", () => setTimeout(setVH, 100));
 
 /* Hero Carousel */
 
-const hero = document.querySelector('.hero');
 const slideTrack = document.querySelector(".slide-track");
 const slides = slideTrack.querySelectorAll(".slide");
 
@@ -342,7 +352,7 @@ function rotateSlides(direction) {
 
 const titles = document.querySelectorAll('.project-title');
 
-const observer = new IntersectionObserver((entries) => {
+const observer2 = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -351,4 +361,4 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.2 });
 
-titles.forEach(title => observer.observe(title));
+titles.forEach(title => observer2.observe(title));
