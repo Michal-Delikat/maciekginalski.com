@@ -61,8 +61,13 @@
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: 0.04em;
-    color: inherit;
+    color: transparent;
     text-decoration: none;
+    transition: color 0.6s ease;
+}
+
+.project-title.visible {
+    color: var(--black);
 }
 
 @media (min-width: 768px) {
