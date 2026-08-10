@@ -12,7 +12,7 @@ class MyHeader extends HTMLElement {
 
                 <nav class="nav-desktop">
                     <ul class="nav-list nav-list-desktop">
-                        <li><a class="nav-link" href="/index.html#projects">FEATURED HOTELS & RESORTS</a></li>
+                        <li><a class="nav-link" href="/index.html#projects">HOTELS & RESORTS</a></li>
                         <li><a class="nav-link" href="/index.html#about">ABOUT ME</a></li>
                     </ul>
                     <a class="instagram-anchor header-instagram-desktop" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
@@ -30,7 +30,7 @@ class MyHeader extends HTMLElement {
 
                 <nav class="nav-mobile">
                     <ul class="nav-list-mobile">
-                        <li><a class="nav-link" href="/index.html#projects">FEATURED HOTELS & RESORTS</a></li>
+                        <li><a class="nav-link" href="/index.html#projects">HOTELS & RESORTS</a></li>
                         <li><a class="nav-link" href="/index.html#about">ABOUT ME</a></li>
                     </ul>
                     <a class="instagram-anchor" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
@@ -93,8 +93,8 @@ const animateMenu = (dir = true) => {
 
     top.animate([
         { transform: 'translateY(0) rotate(0deg)' },
-        { transform: 'translateY(8px) rotate(0deg)', offset: 0.5 },
-        { transform: 'translateY(8px) rotate(45deg)' }
+        { transform: 'translateY(11px) rotate(0deg)', offset: 0.5 },
+        { transform: 'translateY(11px) rotate(45deg)' }
     ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
 
     mid.animate([
@@ -110,8 +110,8 @@ const animateMenu = (dir = true) => {
 
     bot.animate([
         { transform: 'translateY(0) rotate(0deg)' },
-        { transform: 'translateY(-8px) rotate(0deg)', offset: 0.5 },
-        { transform: 'translateY(-8px) rotate(-45deg)' }
+        { transform: 'translateY(-11x) rotate(0deg)', offset: 0.5 },
+        { transform: 'translateY(-11px) rotate(-45deg)' }
     ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
 }
 
@@ -368,7 +368,7 @@ const observer2 = new IntersectionObserver((entries) => {
             observer2.unobserve(entry.target);
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 1});
 
 titles.forEach(title => observer2.observe(title));
 

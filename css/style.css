@@ -43,12 +43,13 @@ a:focus {
 
     --max-width: 1300px;
     --header-height: 120px;
-    --mobile-menu-height: 124px;
+    --mobile-menu-height: 200px;
 
     --medium: 768px;
 }
 
 html {
+    scroll-padding-top: var(--header-height);
     scroll-behavior: smooth;
 }
 
@@ -69,21 +70,25 @@ main {
 
 /* Components */
 
+.section {
+    margin-bottom: 2rem;
+}
+
 .inner-section {
     max-width: var(--max-width);
     margin-inline: auto;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 .section-title {
     text-align: center;
-    font-family: var(--font-1);
-    margin-bottom: 1rem;
+    font-family: var(--font-2);
+    margin-bottom: 3rem;
 }
 
 .powerfull-heading {
     text-align: center;
-    padding: 3vh 1rem;
+    padding: 4rem 1rem;
     width: 100%;
     font-family: var(--font-2);
     letter-spacing: 0.02em;

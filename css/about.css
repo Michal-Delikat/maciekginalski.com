@@ -16,8 +16,12 @@
     letter-spacing: 0.03em;
 }
 
+.about-clients {
+    font-family: var(--font-1);
+}
+
 .contact-heading {
-    margin-bottom: 1rem;
+    margin: 1rem 0 0.5rem;
 }
 
 .contact-info {

@@ -28,7 +28,7 @@
     height: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .logo-anchor {
@@ -152,6 +152,14 @@
     font-family: var(--font-2);
 }
 
+.nav-list-mobile .nav-link {
+    font-size: 19px;
+    display: block;
+    height: 2.5rem;
+    align-content: center;
+    padding: 0.5rem;
+}
+
 .nav-link:hover {
     color: var(--light-gray);
 }
@@ -160,7 +168,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 3rem;
+    height: 3rem;
     padding: 1rem;
+    margin: 0 auto;
 }
 
 .instagram-anchor:hover {
@@ -187,6 +198,10 @@
         transition: color 0.4s ease;
     }
 
+    .nav-desktop .instagram-anchor {
+        height: 100%;
+    }
+
     .index .nav-desktop {
         color: var(--white);
     }
@@ -199,6 +214,9 @@
         color: var(--black);
     }
 
+    .index .header.active .nav-desktop {
+        color: var(--black);
+    }
 
     .nav-link {
         padding: 0.5rem;
