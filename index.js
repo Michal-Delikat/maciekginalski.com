@@ -115,6 +115,8 @@ navListMobile.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
 });
 
+document.querySelector('.nav-mobile').querySelector('.instagram-anchor').addEventListener('click', closeMenu);
+
 /* To top widget */
 
 const toTop = document.querySelector(".to-top");
@@ -130,11 +132,13 @@ window.addEventListener("scroll", () => {
 /* Hero Height */
 
 function setVH() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
 setVH();
+
+window.addEventListener('resize', setVH);
 
 /* Hero Carousel */
 

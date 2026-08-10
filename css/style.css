@@ -44,6 +44,8 @@ a:focus {
     --max-width: 1300px;
     --header-height: 64px;
     --mobile-menu-height: 124px;
+
+    --medium: 768px;
 }
 
 html {
