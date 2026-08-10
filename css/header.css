@@ -28,20 +28,29 @@
     height: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .logo-anchor {
     padding: 1rem;
     font-family: var(--font-1);
+    align-content: center;
 }
 
 .logo-text {
     display: block;
     color: var(--black);
+    transition: color 0.4s ease;
 }
 
 .index .logo-text {
     color: var(--white);
+}
+
+/* Header color based on slide */
+
+.index .header.black .logo-text {
+    color: var(--black);
 }
 
 .index .header.scrolled .logo-text  {
@@ -54,11 +63,11 @@
 
 .logo-top {
     letter-spacing: 0.07em;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .logo-bottom {
-    font-size: 14px;
+    font-size: 15px;
 }   
 
 .nav-desktop {
@@ -74,8 +83,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  width: 2rem;
+  height: 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -90,6 +99,10 @@
 
 .index .hamburger span {
     background: var(--white);
+}
+
+.index .header.black .hamburger span {
+    background: var(--black);
 }
 
 .index .header.scrolled .hamburger span {
@@ -171,15 +184,21 @@
     .nav-desktop {
         display: flex;
         color: var(--black);
+        transition: color 0.4s ease;
     }
 
     .index .nav-desktop {
         color: var(--white);
     }
 
+    .index .header.black .nav-desktop {
+        color: var(--black);
+    }
+
     .index .header.scrolled .nav-desktop {
         color: var(--black);
     }
+
 
     .nav-link {
         padding: 0.5rem;

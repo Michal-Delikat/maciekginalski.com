@@ -42,7 +42,7 @@ a:focus {
     --font-2: 'Cormorant Garamond', sans-serif;
 
     --max-width: 1300px;
-    --header-height: 64px;
+    --header-height: 120px;
     --mobile-menu-height: 124px;
 
     --medium: 768px;

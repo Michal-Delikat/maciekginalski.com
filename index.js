@@ -1,3 +1,5 @@
+const slideAnimationDuration = 4000;
+
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -154,8 +156,6 @@ function setVH() {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
-setVH();
-
 screen.orientation.addEventListener("change", () => setTimeout(setVH, 100));
 
 /* Hero Carousel */
@@ -201,6 +201,8 @@ function rotateSlides(direction) {
         nextSlide.style.transition = 'none';
         nextSlide.style.transform = 'translate(-100%)';
     }
+
+    updateHeaderColor();
 }
 
 // Auto-play
@@ -223,7 +225,7 @@ setInterval(() => {
     Promise.all([a1.finished, a2.finished]).then(() => {
         rotateSlides("left");
     });
-}, 5000);
+}, slideAnimationDuration);
 /*
 hero.addEventListener("pointerdown", e => {
     // Zatrzymaj i zapisz bieżące animacje — fill:forwards blokowałoby style.transform
@@ -369,3 +371,18 @@ const observer2 = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 titles.forEach(title => observer2.observe(title));
+
+/* Header color changes based on current slide */
+
+function updateHeaderColor() {
+    const color = currentSlide.dataset.headerColor ?? 'white';
+    console.log(color);
+    if (color === 'black') {
+        header.classList.add('black');
+    } else {
+        header.classList.remove('black');
+    }
+}
+
+setVH();
+updateHeaderColor();
