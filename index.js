@@ -138,7 +138,7 @@ function setVH() {
 
 setVH();
 
-window.addEventListener('resize', setVH);
+screen.orientation.addEventListener("change", () => setTimeout(setVH, 100));
 
 /* Hero Carousel */
 
