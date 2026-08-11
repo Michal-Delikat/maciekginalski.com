@@ -32,6 +32,7 @@ function buildProjectPageHtml(title, imagesHtml) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/project.css">
     <link rel="stylesheet" href="../css/header.css">
@@ -93,11 +94,12 @@ async function build() {
 
   const projectTiles = entries.items.map((item) => {
     const title = item.fields.projectTitle;
+    console.log(title);
     const fileTitle = getFileTitle(title);
+    console.log(fileTitle);
     const imageUrl = 'https:' + item.fields.projectImage.fields.file.url;
     const imagesHtml = buildImagesHtml(item.fields.projectImages);
 
-    // Zapis pliku projektu
     writeDistFile(fileTitle, buildProjectPageHtml(title, imagesHtml));
 
     return buildProjectTileHtml(fileTitle, imageUrl, title);

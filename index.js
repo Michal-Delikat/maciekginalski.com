@@ -5,7 +5,7 @@ class MyHeader extends HTMLElement {
         this.innerHTML = `
         <header class="header">
             <div class="inner-header">
-                <a class="logo-anchor" href="/index.html">
+                <a class="logo-anchor" href="/">
                     <span class="logo-text logo-top">MACIEK GINALSKI</span>
                     <span class="logo-text logo-bottom">Hotel & Lifestyle Photography</span>
                 </a>
@@ -62,14 +62,6 @@ customElements.define('my-footer', MyFooter);
 const hero = document.querySelector('.hero');
 const header = document.querySelector('.header');
 
-// const observer = new IntersectionObserver((entries) => {
-//     if (entries[0].intersectionRatio < 1) {
-//         header.classList.toggle('scrolled');
-//     }
-// }, { threshold: 0.8});
-
-// observer.observe(hero);
-
 window.addEventListener("scroll", () => {
     if (window.pageYOffset > 50) {
         header.classList.add("scrolled");
@@ -91,27 +83,27 @@ const animateMenu = (dir = true) => {
 
     [top, mid, bot].forEach(s => s.getAnimations().forEach(a => a.cancel()));
 
-    top.animate([
-        { transform: 'translateY(0) rotate(0deg)' },
-        { transform: 'translateY(11px) rotate(0deg)', offset: 0.5 },
-        { transform: 'translateY(11px) rotate(45deg)' }
+        top.animate([
+            { transform: 'translateY(0) rotate(0deg)', offset: 0 },
+        { transform: 'translateY(11px) rotate(0deg)', offset: 0.8 },
+            { transform: 'translateY(11px) rotate(45deg)', offset: 1 }
     ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
 
-    mid.animate([
-        { opacity: 1 },
-        { opacity: 0 }
-    ], {
-        duration: 200,
-        easing: 'ease',
-        fill: 'both',
-        direction: dir,
-        delay: isOpen ? 0 : 200
-    });
+        mid.animate([
+            { opacity: 1 },
+            { opacity: 0 }
+        ], {
+            duration: 200,
+            easing: 'ease',
+            fill: 'both',
+            direction: dir,
+            delay: isOpen ? 0 : 200
+        });
 
-    bot.animate([
-        { transform: 'translateY(0) rotate(0deg)' },
-        { transform: 'translateY(-11x) rotate(0deg)', offset: 0.5 },
-        { transform: 'translateY(-11px) rotate(-45deg)' }
+        bot.animate([
+            { transform: 'translateY(0) rotate(0deg)', offset: 0 },
+            { transform: 'translateY(-11px) rotate(0deg)', offset: 0.8 },
+            { transform: 'translateY(-11px) rotate(-45deg)', offset: 1 }
     ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
 }
 
