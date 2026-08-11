@@ -1,183 +1,13 @@
-const slideAnimationDuration = 4000;
 
-class MyHeader extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
-        <header class="header">
-            <div class="inner-header">
-                <a class="logo-anchor" href="/">
-                    <span class="logo-text logo-top">MACIEK GINALSKI</span>
-                    <span class="logo-text logo-bottom">Hotel & Lifestyle Photography</span>
-                </a>
-
-                <nav class="nav-desktop">
-                    <ul class="nav-list nav-list-desktop">
-                        <li><a class="nav-link" href="#" data-target="projects">HOTELS & RESORTS</a></li>
-                        <li><a class="nav-link" href="#" data-target="about">ABOUT ME</a></li>
-                    </ul>
-                    <a class="instagram-anchor header-instagram-desktop" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
-                    </a>
-                </nav>
-
-                <div class="hamburger-wrapper">
-                    <button class="hamburger" id="menu-toggle" aria-label="Menu">
-                        <span class="top-bar"></span>
-                        <span class="middle-bar"></span>
-                        <span class="bottom-bar"></span>
-                    </button>
-                </div>
-
-                <nav class="nav-mobile">
-                    <ul class="nav-list-mobile">
-                        <li><a class="nav-link" href="#" data-target="projects">HOTELS & RESORTS</a></li>
-                        <li><a class="nav-link" href="#" data-target="about">ABOUT ME</a></li>
-                    </ul>
-                    <a class="instagram-anchor" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
-                    </a>
-                </nav>
-            </div>
-        </header>		
-        `
-    }
-}
-
-class MyFooter extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
-        <footer class="footer">
-            <p class="footer-copyright">&copy; Maciek Ginalski ${new Date().getFullYear()}</p>
-            <a class="footer-instagram-anchor" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank">
-                <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
-            </a>
-        </footer>
-        `
-    }
-}
-
-customElements.define('my-header', MyHeader);
-customElements.define('my-footer', MyFooter);
+const SLIDE_ANIMATION_DURATION = 4000;
+const SLIDE_TRANSITION_DURATION = 800;
+const SCROLL_THRESHOLD = 50;
 
 const hero = document.querySelector('.hero');
 const header = document.querySelector('.header');
-
-window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 50) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled")
-    }
-})
-
-/* Toggle Mobile Menu */ 
-
-let isOpen = false;
-
-const hamburger = document.getElementById('menu-toggle');
-const navListMobile = document.querySelector('.nav-list-mobile');
-
-const animateMenu = (dir = true) => {
-    dir = dir ? 'normal' : 'reverse';
-    const [top, mid, bot] = hamburger.querySelectorAll('span');
-
-    [top, mid, bot].forEach(s => s.getAnimations().forEach(a => a.cancel()));
-
-        top.animate([
-            { transform: 'translateY(0) rotate(0deg)', offset: 0 },
-        { transform: 'translateY(11px) rotate(0deg)', offset: 0.8 },
-            { transform: 'translateY(11px) rotate(45deg)', offset: 1 }
-    ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
-
-        mid.animate([
-            { opacity: 1 },
-            { opacity: 0 }
-        ], {
-            duration: 200,
-            easing: 'ease',
-            fill: 'both',
-            direction: dir,
-            delay: isOpen ? 0 : 200
-        });
-
-        bot.animate([
-            { transform: 'translateY(0) rotate(0deg)', offset: 0 },
-            { transform: 'translateY(-11px) rotate(0deg)', offset: 0.8 },
-            { transform: 'translateY(-11px) rotate(-45deg)', offset: 1 }
-    ], { duration: 400, easing: 'ease', fill: 'forwards', direction: dir });
-}
-
-hamburger.addEventListener('click', function () {
-    isOpen = !isOpen;
-
-    header.classList.toggle('active');
-
-    animateMenu(isOpen);
-});
-
-/* Hide mobile menu when option is clicked */ 
-
-const closeMenu = () => {
-    isOpen = !isOpen;
-    header.classList.toggle('active');
-    animateMenu(false);
-}
-
-document.querySelectorAll('.nav-link[data-target]').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = link.dataset.target;
-
-        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-            document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
-        } else {
-            window.location.href = `/?scrollTo=${target}`;
-        }
-    });
-});
-
-window.addEventListener('load', () => {
-    const params = new URLSearchParams(window.location.search);
-    const target = params.get('scrollTo');
-    if (target) {
-        document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
-    }
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-        window.history.replaceState({}, '', '/');
-    }
-});
-
-navListMobile.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-});
-
-document.querySelector('.nav-mobile').querySelector('.instagram-anchor').addEventListener('click', closeMenu);
-
-/* To top widget */
-
-const toTop = document.querySelector(".to-top");
-
-window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 100) {
-        toTop.classList.add("active");
-    } else {
-        toTop.classList.remove("active")
-    }
-})
-
-/* Hero Height */
-
-function setVH() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-screen.orientation.addEventListener("change", () => setTimeout(setVH, 100));
-
-/* Hero Carousel */
-
-const slideTrack = document.querySelector(".slide-track");
-const slides = slideTrack.querySelectorAll(".slide");
+const slideTrack = document.querySelector('.slide-track');
+const slides = slideTrack.querySelectorAll('.slide');
+const titles = document.querySelectorAll('.project-title');
 
 let currentIndex = slides.length - 1;
 let currentSlide = slides[currentIndex];
@@ -190,22 +20,26 @@ let startX = 0;
 let currentX = 0;
 let dragging = false;
 
-previousSlide.style.transform = 'translateX(-100%)';
-currentSlide.style.transform = 'translateX(0%)';
-nextSlide.style.transform = 'translateX(100%)';
+function setVH() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+function updateHeaderColor() {
+    const color = currentSlide.dataset.headerColor ?? 'black';
+    header.classList.toggle('white', color === 'white');
+}
 
 function rotateSlides(direction) {
-    if (direction === "left") {
+    if (direction === 'left') {
         previousSlide = currentSlide;
         previousIndex = currentIndex;
         currentSlide = nextSlide;
         currentIndex = nextIndex;
         nextIndex = (currentIndex - 1 + slides.length) % slides.length;
         nextSlide = slides[nextIndex];
-        nextSlide.style.transform = 'translateX(100%)';
-
         nextSlide.style.transition = 'none';
-        nextSlide.style.transform = 'translate(100%)';
+        nextSlide.style.transform = 'translateX(100%)';
     } else {
         nextSlide = currentSlide;
         nextIndex = currentIndex;
@@ -215,33 +49,73 @@ function rotateSlides(direction) {
         previousSlide = slides[previousIndex];
         previousSlide.style.transform = 'translateX(-100%)';
         nextSlide.style.transition = 'none';
-        nextSlide.style.transform = 'translate(-100%)';
+        nextSlide.style.transform = 'translateX(-100%)';
     }
 
     updateHeaderColor();
 }
 
-// Auto-play
-setInterval(() => {
+function advanceSlide() {
     if (dragging) return;
 
     const a1 = currentSlide.animate([
         { transform: 'translateX(0%)' },
         { transform: 'translateX(-100%)' }
-    ], { duration: 800, easing: 'ease' });
+    ], { duration: SLIDE_TRANSITION_DURATION, easing: 'ease' });
 
     const a2 = nextSlide.animate([
         { transform: 'translateX(100%)' },
         { transform: 'translateX(0%)' }
-    ], { duration: 800, easing: 'ease' });
+    ], { duration: SLIDE_TRANSITION_DURATION, easing: 'ease' });
 
     currentSlide.style.transform = 'translateX(-100%)';
     nextSlide.style.transform = 'translateX(0%)';
 
-    Promise.all([a1.finished, a2.finished]).then(() => {
-        rotateSlides("left");
-    });
-}, slideAnimationDuration);
+    Promise.all([a1.finished, a2.finished]).then(() => rotateSlides('left'));
+}
+
+function handleScroll() {
+    header.classList.toggle('scrolled', window.pageYOffset > SCROLL_THRESHOLD);
+}
+
+function handleLoad() {
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get('scrollTo');
+
+    if (target) {
+        document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState({}, '', '/');
+    }
+}
+
+function init() {
+    previousSlide.style.transform = 'translateX(-100%)';
+    currentSlide.style.transform = 'translateX(0%)';
+    nextSlide.style.transform = 'translateX(100%)';
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 1 });
+
+    titles.forEach(title => observer.observe(title));
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleLoad);
+    screen.orientation.addEventListener('change', () => setTimeout(setVH, 100));
+
+    setInterval(advanceSlide, SLIDE_ANIMATION_DURATION);
+
+    setVH();
+    updateHeaderColor();
+}
+
+init();
+
 /*
 hero.addEventListener("pointerdown", e => {
     // Zatrzymaj i zapisz bieżące animacje — fill:forwards blokowałoby style.transform
@@ -352,52 +226,4 @@ function snapBack(dx) {
     }
 }
 
-function rotateSlides(direction) {
-    if (direction === "left") {
-        previousSlide = currentSlide;
-        previousIndex = currentIndex;
-        currentSlide = nextSlide;
-        currentIndex = nextIndex;
-        nextIndex = (currentIndex - 1 + slides.length) % slides.length;
-        nextSlide = slides[nextIndex];
-        nextSlide.style.transform = 'translateX(100%)'; // nowy slajd czeka po prawej
-    } else {
-        nextSlide = currentSlide;
-        nextIndex = currentIndex;
-        currentSlide = previousSlide;
-        currentIndex = previousIndex;
-        previousIndex = (currentIndex + 1) % slides.length;
-        previousSlide = slides[previousIndex];
-        previousSlide.style.transform = 'translateX(-100%)'; // nowy slajd czeka po lewej
-    }
-}
 */
-
-/* project titles show on scroll in */
-
-const titles = document.querySelectorAll('.project-title');
-
-const observer2 = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer2.unobserve(entry.target);
-        }
-    });
-}, { threshold: 1});
-
-titles.forEach(title => observer2.observe(title));
-
-/* Header color changes based on current slide */
-
-function updateHeaderColor() {
-    const color = currentSlide.dataset.headerColor ?? 'black';
-    if (color === 'white') {
-        header.classList.add('white');
-    } else {
-        header.classList.remove('white');
-    }
-}
-
-setVH();
-updateHeaderColor();

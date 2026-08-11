@@ -37,7 +37,7 @@ function buildProjectPageHtml(title, imagesHtml) {
     <link rel="stylesheet" href="../css/project.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <script type="module" src="../index.js"></script>
+    <script type="module" src="../script.js"></script>
   </head>
   <body>
     <my-header></my-header>
