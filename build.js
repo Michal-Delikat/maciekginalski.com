@@ -57,9 +57,10 @@ function buildProjectPageHtml(title, imagesHtml) {
 }
 
 function buildProjectTileHtml(fileTitle, imageUrl, title) {
+  const slug = fileTitle.replace('.html', '');
   return `
           <div class="project-container">
-            <a class="project-anchor" href="/${fileTitle}}">
+            <a class="project-anchor" href="/${slug}">
               <div class="project-image-wrapper">
                 <img class="project-image" src="${imageUrl}">
               </div>
