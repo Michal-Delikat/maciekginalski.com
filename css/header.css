@@ -33,7 +33,6 @@
 
 .logo-anchor {
     padding: 1rem;
-    font-family: var(--font-1);
     align-content: center;
 }
 
@@ -43,31 +42,28 @@
     transition: color 0.4s ease;
 }
 
-.index .logo-text {
+.index .header.white .logo-text {
     color: var(--white);
-}
-
-/* Header color based on slide */
-
-.index .header.black .logo-text {
-    color: var(--black);
 }
 
 .index .header.scrolled .logo-text  {
     color: var(--black);
 }
 
-.header.active .logo-text {
+.index .header.active .logo-text {
     color: var(--black);
 }
 
 .logo-top {
-    letter-spacing: 0.07em;
+    font-family: var(--font-1);
     font-size: 20px;
+    letter-spacing: 0.07em;
 }
 
 .logo-bottom {
+    font-family: var(--font-1);
     font-size: 15px;
+    letter-spacing: 0.02em;
 }   
 
 .nav-desktop {
@@ -95,21 +91,18 @@
   width: 100%;
   height: 2px;
   background: var(--black);
+  transition: background 0.4s ease;
 }
 
-.index .hamburger span {
+.index .header.white .hamburger span {
     background: var(--white);
-}
-
-.index .header.black .hamburger span {
-    background: var(--black);
 }
 
 .index .header.scrolled .hamburger span {
     background: var(--black);
 }
 
-.header.active .hamburger span {
+.index .header.active .hamburger span {
     background: var(--black);
 }
 
@@ -149,11 +142,12 @@
 }
 
 .nav-link {
-    font-family: var(--font-2);
+    font-family: var(--font-3);
+    font-size: 12px;
+    letter-spacing: 0.2em;
 }
 
 .nav-list-mobile .nav-link {
-    font-size: 19px;
     display: block;
     height: 2.5rem;
     align-content: center;
@@ -202,12 +196,8 @@
         height: 100%;
     }
 
-    .index .nav-desktop {
+    .index .header.white .nav-desktop {
         color: var(--white);
-    }
-
-    .index .header.black .nav-desktop {
-        color: var(--black);
     }
 
     .index .header.scrolled .nav-desktop {

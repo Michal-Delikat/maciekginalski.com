@@ -375,12 +375,11 @@ titles.forEach(title => observer2.observe(title));
 /* Header color changes based on current slide */
 
 function updateHeaderColor() {
-    const color = currentSlide.dataset.headerColor ?? 'white';
-    console.log(color);
-    if (color === 'black') {
-        header.classList.add('black');
+    const color = currentSlide.dataset.headerColor ?? 'black';
+    if (color === 'white') {
+        header.classList.add('white');
     } else {
-        header.classList.remove('black');
+        header.classList.remove('white');
     }
 }
 
