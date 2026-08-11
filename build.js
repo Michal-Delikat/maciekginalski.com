@@ -9,7 +9,7 @@ const client = createClient({
 });
 
 function getFileName(projectTitle) {
-  return projectTitle.split(' ').join('_').toLowerCase() + '.html';
+  return projectTitle.split(' ').join('-').toLowerCase() + '.html';
 }
 
 function buildImagesHtml(projectImages) {

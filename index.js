@@ -12,8 +12,8 @@ class MyHeader extends HTMLElement {
 
                 <nav class="nav-desktop">
                     <ul class="nav-list nav-list-desktop">
-                        <li><a class="nav-link" href="/index.html#projects">HOTELS & RESORTS</a></li>
-                        <li><a class="nav-link" href="/index.html#about">ABOUT ME</a></li>
+                        <li><a class="nav-link" href="#" data-target="projects">HOTELS & RESORTS</a></li>
+                        <li><a class="nav-link" href="#" data-target="about">ABOUT ME</a></li>
                     </ul>
                     <a class="instagram-anchor header-instagram-desktop" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
@@ -30,8 +30,8 @@ class MyHeader extends HTMLElement {
 
                 <nav class="nav-mobile">
                     <ul class="nav-list-mobile">
-                        <li><a class="nav-link" href="/index.html#projects">HOTELS & RESORTS</a></li>
-                        <li><a class="nav-link" href="/index.html#about">ABOUT ME</a></li>
+                        <li><a class="nav-link" href="#" data-target="projects">HOTELS & RESORTS</a></li>
+                        <li><a class="nav-link" href="#" data-target="about">ABOUT ME</a></li>
                     </ul>
                     <a class="instagram-anchor" href="https://www.instagram.com/maciek_ginalski_photography/" target="_blank" aria-label="Instagram">
                         <i class="fa-brands fa-instagram social-media-icon fa-lg"></i>
@@ -122,6 +122,30 @@ const closeMenu = () => {
     header.classList.toggle('active');
     animateMenu(false);
 }
+
+document.querySelectorAll('.nav-link[data-target]').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.dataset.target;
+
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
+        } else {
+            window.location.href = `/?scrollTo=${target}`;
+        }
+    });
+});
+
+window.addEventListener('load', () => {
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get('scrollTo');
+    if (target) {
+        document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        window.history.replaceState({}, '', '/');
+    }
+});
 
 navListMobile.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
