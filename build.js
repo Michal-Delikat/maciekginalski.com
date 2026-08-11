@@ -8,7 +8,7 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 });
 
-function getFileTitle(projectTitle) {
+function getFileName(projectTitle) {
   return projectTitle.split(' ').join('_').toLowerCase() + '.html';
 }
 
@@ -59,7 +59,7 @@ function buildProjectPageHtml(title, imagesHtml) {
 function buildProjectTileHtml(fileTitle, imageUrl, title) {
   return `
           <div class="project-container">
-            <a class="project-anchor" href="dist/${fileTitle}">
+            <a class="project-anchor" href="/${fileTitle}}">
               <div class="project-image-wrapper">
                 <img class="project-image" src="${imageUrl}">
               </div>
@@ -94,15 +94,13 @@ async function build() {
 
   const projectTiles = entries.items.map((item) => {
     const title = item.fields.projectTitle;
-    console.log(title);
-    const fileTitle = getFileTitle(title);
-    console.log(fileTitle);
+    const fileName = getFileName(title);
     const imageUrl = 'https:' + item.fields.projectImage.fields.file.url;
     const imagesHtml = buildImagesHtml(item.fields.projectImages);
 
-    writeDistFile(fileTitle, buildProjectPageHtml(title, imagesHtml));
+    writeDistFile(fileName, buildProjectPageHtml(title, imagesHtml));
 
-    return buildProjectTileHtml(fileTitle, imageUrl, title);
+    return buildProjectTileHtml(fileName, imageUrl, title);
   });
 
   injectIntoIndex(projectTiles.join('\n'));
