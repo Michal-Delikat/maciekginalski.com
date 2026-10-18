@@ -10,7 +10,7 @@
 }
 
 .about-bio {
-    /* font-family: var(--font-1); */
+    font-family: var(--font-1);
     margin: 1rem 0;
     font-size: 1.25rem;
     letter-spacing: 0.03em;

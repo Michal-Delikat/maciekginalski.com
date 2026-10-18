@@ -5,4 +5,4 @@ node_modules/
 dist/
 deno.lock
 .netlify
-
+settings.json
