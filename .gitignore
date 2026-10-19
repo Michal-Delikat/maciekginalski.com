@@ -3,6 +3,6 @@
 .env
 node_modules/
 dist/
+.netlify/
+.vscode/
 deno.lock
-.netlify
-settings.json
