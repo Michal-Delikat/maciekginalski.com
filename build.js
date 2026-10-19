@@ -58,7 +58,7 @@ function buildProjectTileHtml(fileTitle, imageUrl, title) {
           <div class="project-container">
             <a class="project-anchor" href="/${slug}">
               <div class="project-image-wrapper">
-                <img class="project-image" src="${imageUrl}">
+                <img class="project-image" src="${imageUrl}" alt="${title}">
               </div>
               <span class="project-title">${title}</span>
             </a>
