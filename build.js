@@ -29,10 +29,6 @@ function buildProjectPageHtml(title, imagesHtml) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maciek Ginalski</title>
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/project.css">
     <link rel="stylesheet" href="../css/header.css">

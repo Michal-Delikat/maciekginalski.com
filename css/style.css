@@ -5,6 +5,22 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('../fonts/cormorant-garamond-v21-latin-300.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap; 
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-v31-latin-regular.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
 /* Reset */
 
 * {
@@ -91,6 +107,7 @@ main {
     letter-spacing: 0.02em;
     background-color: var(--white);
     margin: 5rem 0 3rem;
+    font-weight: 300;
 }
 
 .powerfull-subheading {
