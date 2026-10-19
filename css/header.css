@@ -1,83 +1,217 @@
-header {
+.header {
     width: 100%;
-    min-height: 20vh;
-    padding: 5vh 0;
+    height: var(--header-height);
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-nav {
-    text-align: center;
+.index .header {
+    background-color: transparent;
 }
 
-ul {
-    margin: 0;
+.index .header.scrolled {
+    background-color: var(--white);
 }
 
-nav ul {
-    list-style-type: none;
-    text-transform: uppercase;
-    padding-inline-start: 0;
-    margin-top: 0;
+.header.active {
+    background-color: var(--white);
 }
 
-nav ul li {
-    display: inline-block;
-    padding-bottom: 3px;
-    margin: 15px 27px;
-}
-
-nav ul li a {
-    width: 40%;
-    height: 48px;
-    box-sizing: margin-box;
-    font-size: 18px;
-    font-weight: 300;
-}
-
-.menu h1 {
-    text-align: center;
-    margin-top: 2vh;
-}
-
-.icons {
-    width: 30%;
-    margin: 15px auto;
+.inner-header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.icons a img {
-    width: 2em;
+.logo-anchor {
+    padding: 1rem;
+    align-content: center;
 }
 
-.icons a img:hover {
-    filter: brightness(30%);
+.logo-text {
+    display: block;
+    color: var(--black);
+    transition: color 0.4s ease;
+}
+
+.index .header.white .logo-text {
+    color: var(--white);
+}
+
+.index .header.scrolled .logo-text  {
+    color: var(--black);
+}
+
+.index .header.active .logo-text {
+    color: var(--black);
+}
+
+.logo-top {
+    font-family: var(--font-1);
+    font-size: 20px;
+    letter-spacing: 0.07em;
+}
+
+.logo-bottom {
+    font-family: var(--font-1);
+    font-size: 15px;
+    letter-spacing: 0.01em;
+}   
+
+.nav-desktop {
+    display: none;
+}
+
+.hamburger-wrapper {
+    padding: 1rem;
+    align-content: center;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--black);
+  transition: background 0.4s ease;
+}
+
+.index .header.white .hamburger span {
+    background: var(--white);
+}
+
+.index .header.scrolled .hamburger span {
+    background: var(--black);
+}
+
+.index .header.active .hamburger span {
+    background: var(--black);
+}
+
+.nav-mobile {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: transparent;
+    transition: height 0.2s ease, background-color 0.4s ease;
+}
+
+.header.active {
+    color: var(--black);
+}
+
+.header.active .nav-mobile {
+    height: var(--mobile-menu-height);
+    background-color: var(--white);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-list-mobile {
+    flex-direction: column;
+}
+
+.nav-list-mobile li {
+    text-align: center;
+    margin: 0.75rem;
+}
+
+.nav-link {
+    font-family: var(--font-3);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+
+.nav-list-mobile .nav-link {
+    display: block;
+    height: 2.5rem;
+    align-content: center;
+    padding: 0.5rem;
+}
+
+.nav-link:hover {
+    color: var(--light-gray);
+}
+
+.instagram-anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.75rem;
+    margin: 0 auto;
+}
+
+.instagram-anchor:hover {
+    color: var(--light-gray);
+}
+
+.instagram-anchor svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.instagram-image {
+    width: 2rem;
+    height: 2rem;
+}
+
+.nav-list-desktop {
+    margin-right: 1rem;
 }
 
 @media (min-width: 768px) {
-
-    header h1 {
-        display: inline-block;
-        width: 40%;
-        margin-left: 30%;
-        margin-right: 2%
+    .hamburger-wrapper {
+        display: none;
     }
 
-    nav {
-        margin: 45px 0 10px;
+    .nav-desktop {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        color: var(--black);
+        transition: color 0.4s ease;
     }
 
-    nav ul li {
-        margin: 15px 27px;
+    .index .header.white .nav-desktop {
+        color: var(--white);
     }
 
-    .icons {
-        display: inline-block;
-        width: 15%;
-        margin: 0;
+    .index .header.scrolled .nav-desktop {
+        color: var(--black);
     }
 
-    .icons a img {
-        width: 38px;
-        margin: 0 8px;
+    .index .header.active .nav-desktop {
+        color: var(--black);
+    }
+
+    .nav-link {
+        padding: 0.5rem;
     }
 }

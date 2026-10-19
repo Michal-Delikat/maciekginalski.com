@@ -1,9 +1,26 @@
-footer {
+.footer {
     width: 100%;
-    text-align: center;
-    height: 5vh;
 }
 
-footer p {
-    font-size: 15px;
+.footer-copyright {
+    text-align: center;
+    font-family: var(--font-1);
+}
+
+.footer-instagram-anchor {
+    display: block;
+    margin: 1rem auto;
+    width: 1.5rem;
+    padding: 1rem;
+    box-sizing: content-box;
+}
+
+.footer-instagram-anchor svg {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.footer-instagram-anchor:hover {
+    color: var(--light-gray);
 }

@@ -1,36 +1,60 @@
 .about-wrapper {
-    width: 80%;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
     margin: 0 auto;
 }
 
-.profile-picture {
+.about-image {
     width: 100%;
 }
 
-.about-text {
-    font-size: 18px;
-    text-align: left;
-    padding: 15px;
+.about-bio {
+    font-family: var(--font-1);
+    margin: 1rem 0;
+    font-size: 1.25rem;
+    letter-spacing: 0.03em;
 }
 
-@media (min-width: 1024px) {    
+.about-clients {
+    font-family: var(--font-1);
+}
+
+.contact-heading {
+    margin: 1rem 0 0.5rem;
+}
+
+.contact-info {
+    font-family: var(--font-1);
+}
+
+.privacy-policy {
+    margin-inline: auto;
+    display: block;
+    text-align: left;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+}
+
+@media (min-width: 768px) {
     .about-wrapper {
-        width: 1000px;
-        margin: 0 auto;
+        flex-direction: row;
     }
 
-    .profile-picture {
-        display: inline-block;
-        width: 334px;
-        margin-right: 50px;
-        padding: 0;
+    .about-image {
+        width: 300px;
     }
 
     .about-text {
-        display: inline-block;
-        width: 472px;
+        padding-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .about-bio {
         margin: 0;
-        line-height: 170%;
     }
 }
