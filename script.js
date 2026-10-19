@@ -133,7 +133,6 @@ function handleScroll() {
 function init() {
     hamburger.addEventListener('click', handleHamburgerClick);
 
-    console.log(navLinks);
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             handleNavLinkClick(e, link);
