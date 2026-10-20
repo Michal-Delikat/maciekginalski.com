@@ -22,14 +22,18 @@ let dragging = false;
 let advanceTimeout = null;
 let isAdvancing = false;
 
+let vhViewportWidth = window.innerWidth;
+
 function setVH() {
+    vhViewportWidth = window.innerWidth;
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
 let vhFrame = null;
 
-function scheduleVH() {
+function scheduleVH(force = false) {
+    if (!force && window.innerWidth === vhViewportWidth) return;
     if (vhFrame !== null) return;
 
     vhFrame = requestAnimationFrame(() => {
@@ -182,9 +186,8 @@ function init() {
     document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('pagehide', pauseCarousel);
     window.addEventListener('pageshow', handlePageShow);
-    window.addEventListener('resize', scheduleVH);
-    window.visualViewport?.addEventListener('resize', scheduleVH);
-    screen.orientation.addEventListener('change', scheduleVH);
+    window.addEventListener('resize', () => scheduleVH());
+    screen.orientation.addEventListener('change', () => scheduleVH(true));
 
     scheduleAdvance();
 
