@@ -27,6 +27,17 @@ function setVH() {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
+let vhFrame = null;
+
+function scheduleVH() {
+    if (vhFrame !== null) return;
+
+    vhFrame = requestAnimationFrame(() => {
+        vhFrame = null;
+        setVH();
+    });
+}
+
 function updateHeaderColor() {
     const color = currentSlide.dataset.headerColor ?? 'black';
     header.classList.toggle('white', color === 'white');
@@ -171,7 +182,9 @@ function init() {
     document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('pagehide', pauseCarousel);
     window.addEventListener('pageshow', handlePageShow);
-    screen.orientation.addEventListener('change', () => setTimeout(setVH, 100));
+    window.addEventListener('resize', scheduleVH);
+    window.visualViewport?.addEventListener('resize', scheduleVH);
+    screen.orientation.addEventListener('change', scheduleVH);
 
     scheduleAdvance();
 
