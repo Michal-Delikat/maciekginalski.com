@@ -39,10 +39,22 @@
 		<main class="main">
 			<div class="hero">
 				<div class="slide-track">
-					<img class="slide" src="/img/index_photos/3.jpg" data-header-color="white" alt="" style="transform: translateX(0)" fetchpriority="high">
-					<img class="slide" src="/img/index_photos/1.jpg" data-header-color="black" alt="" style="transform: translateX(100%)">
-					<img class="slide" src="/img/index_photos/2.jpg" data-header-color="white" alt="" style="transform: translateX(100%)">
-					<img class="slide" src="/img/index_photos/5.jpg" data-header-color="black" alt="" style="transform: translateX(-100%)">
+					<picture>
+						<source type="image/webp" srcset="/img/index_photos/3-1280.webp 1280w, /img/index_photos/3-1920.webp 1920w" sizes="100vw">
+						<img class="slide" src="/img/index_photos/3.jpg" data-header-color="white" alt="" style="transform: translateX(0)" fetchpriority="high">
+					</picture>
+					<picture>
+						<source type="image/webp" srcset="/img/index_photos/1-1280.webp 1280w, /img/index_photos/1-1920.webp 1920w" sizes="100vw">
+						<img class="slide" src="/img/index_photos/1.jpg" data-header-color="black" alt="" style="transform: translateX(100%)">
+					</picture>
+					<picture>
+						<source type="image/webp" srcset="/img/index_photos/2-1280.webp 1280w, /img/index_photos/2-1920.webp 1920w" sizes="100vw">
+						<img class="slide" src="/img/index_photos/2.jpg" data-header-color="white" alt="" style="transform: translateX(100%)">
+					</picture>
+					<picture>
+						<source type="image/webp" srcset="/img/index_photos/5-1280.webp 1280w, /img/index_photos/5-1920.webp 1920w" sizes="100vw">
+						<img class="slide" src="/img/index_photos/5.jpg" data-header-color="black" alt="" style="transform: translateX(-100%)">
+					</picture>
 				</div>
 			</div>
 		
@@ -153,7 +165,10 @@
 				<div class="inner-section">
 					<h2 class="section-title">About me</h2>
 					<div class="about-wrapper">
-						<img class="about-image" src="img/about_image.jpg" alt="Maciek Ginalski">
+						<picture>
+							<source type="image/webp" srcset="img/about_image-600.webp 600w, img/about_image-1000.webp 1000w" sizes="(min-width: 768px) 300px, 100vw">
+							<img class="about-image" src="img/about_image.jpg" alt="Maciek Ginalski" loading="lazy" decoding="async">
+						</picture>
 						<div class="about-text">
 							<p class="about-bio">
 								My name is Maciek.

@@ -19,6 +19,9 @@ let startX = 0;
 let currentX = 0;
 let dragging = false;
 
+let advanceTimeout = null;
+let isAdvancing = false;
+
 function setVH() {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -55,8 +58,35 @@ function rotateSlides(direction) {
     updateHeaderColor();
 }
 
+function syncSlidePositions() {
+    slides.forEach((slide, index) => {
+        slide.style.transition = 'none';
+
+        if (index === currentIndex) {
+            slide.style.transform = 'translateX(0%)';
+        } else if (index === previousIndex) {
+            slide.style.transform = 'translateX(-100%)';
+        } else {
+            slide.style.transform = 'translateX(100%)';
+        }
+    });
+}
+
+function scheduleAdvance() {
+    clearTimeout(advanceTimeout);
+
+    if (document.hidden) return;
+
+    advanceTimeout = setTimeout(
+        advanceSlide,
+        Math.max(0, SLIDE_ANIMATION_DURATION - SLIDE_TRANSITION_DURATION)
+    );
+}
+
 function advanceSlide() {
-    if (dragging) return;
+    if (dragging || isAdvancing || document.hidden) return;
+
+    isAdvancing = true;
 
     const a1 = currentSlide.animate([
         { transform: 'translateX(0%)' },
@@ -71,7 +101,41 @@ function advanceSlide() {
     currentSlide.style.transform = 'translateX(-100%)';
     nextSlide.style.transform = 'translateX(0%)';
 
-    Promise.all([a1.finished, a2.finished]).then(() => rotateSlides('left'));
+    Promise.all([a1.finished, a2.finished])
+        .then(() => rotateSlides('left'))
+        .catch(() => {})
+        .finally(() => {
+            isAdvancing = false;
+            scheduleAdvance();
+        });
+}
+
+function pauseCarousel() {
+    clearTimeout(advanceTimeout);
+    isAdvancing = false;
+    [currentSlide, nextSlide].forEach(slide => {
+        slide.getAnimations().forEach(animation => animation.cancel());
+    });
+}
+
+function resumeCarousel() {
+    syncSlidePositions();
+    updateHeaderColor();
+    scheduleAdvance();
+}
+
+function handleVisibilityChange() {
+    if (document.hidden) {
+        pauseCarousel();
+    } else {
+        resumeCarousel();
+    }
+}
+
+function handlePageShow(event) {
+    if (event.persisted) {
+        resumeCarousel();
+    }
 }
 
 function handleScroll() {
@@ -89,9 +153,7 @@ function handleLoad() {
 }
 
 function init() {
-    previousSlide.style.transform = 'translateX(-100%)';
-    currentSlide.style.transform = 'translateX(0%)';
-    nextSlide.style.transform = 'translateX(100%)';
+    syncSlidePositions();
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -106,9 +168,12 @@ function init() {
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('load', handleLoad);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('pagehide', pauseCarousel);
+    window.addEventListener('pageshow', handlePageShow);
     screen.orientation.addEventListener('change', () => setTimeout(setVH, 100));
 
-    setInterval(advanceSlide, SLIDE_ANIMATION_DURATION);
+    scheduleAdvance();
 
     setVH();
     updateHeaderColor();
