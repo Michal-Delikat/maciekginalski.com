@@ -8,11 +8,11 @@ const slideTrack = document.querySelector('.slide-track');
 const slides = slideTrack.querySelectorAll('.slide');
 const titles = document.querySelectorAll('.project-title');
 
-let currentIndex = slides.length - 1;
+let currentIndex = 0;
 let currentSlide = slides[currentIndex];
-let nextIndex = (currentIndex - 1 + slides.length) % slides.length;
+let nextIndex = (currentIndex + 1) % slides.length;
 let nextSlide = slides[nextIndex];
-let previousIndex = (currentIndex + 1) % slides.length;
+let previousIndex = (currentIndex - 1 + slides.length) % slides.length;
 let previousSlide = slides[previousIndex];
 
 let startX = 0;
@@ -35,7 +35,7 @@ function rotateSlides(direction) {
         previousIndex = currentIndex;
         currentSlide = nextSlide;
         currentIndex = nextIndex;
-        nextIndex = (currentIndex - 1 + slides.length) % slides.length;
+        nextIndex = (currentIndex + 1) % slides.length;
         nextSlide = slides[nextIndex];
         nextSlide.style.transition = 'none';
         nextSlide.style.transform = 'translateX(100%)';
@@ -44,11 +44,12 @@ function rotateSlides(direction) {
         nextIndex = currentIndex;
         currentSlide = previousSlide;
         currentIndex = previousIndex;
-        previousIndex = (currentIndex + 1) % slides.length;
+        previousIndex = (currentIndex - 1 + slides.length) % slides.length;
         previousSlide = slides[previousIndex];
+        previousSlide.style.transition = 'none';
         previousSlide.style.transform = 'translateX(-100%)';
         nextSlide.style.transition = 'none';
-        nextSlide.style.transform = 'translateX(-100%)';
+        nextSlide.style.transform = 'translateX(100%)';
     }
 
     updateHeaderColor();
