@@ -29,6 +29,7 @@
 
 .contact-info {
     font-family: var(--font-1);
+    font-variant-numeric: lining-nums;
 }
 
 .privacy-policy {
