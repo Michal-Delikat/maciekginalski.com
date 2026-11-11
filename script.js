@@ -72,7 +72,6 @@ const hamburger = document.getElementById('menu-toggle');
 const navListMobile = document.querySelector('.nav-list-mobile');
 const navLinks = document.querySelectorAll('.nav-link[data-target]');
 const instagramAnchor = document.querySelector('.nav-mobile').querySelector('.instagram-anchor');
-const toTop = document.querySelector(".to-top");
 
 function animateMenu(dir = true) {
     dir = dir ? 'normal' : 'reverse';
@@ -132,10 +131,6 @@ function handleNavLinkClick(e, link) {
     }
 }
 
-function handleScroll() {
-    window.pageYOffset > 100 ? toTop.classList.add("active") : toTop.classList.remove("active");
-}
-
 function init() {
     hamburger.addEventListener('click', handleHamburgerClick);
 
@@ -146,7 +141,6 @@ function init() {
     });
 
     instagramAnchor.addEventListener('click', closeMenu);
-    window.addEventListener("scroll", handleScroll);
 }
 
 init();

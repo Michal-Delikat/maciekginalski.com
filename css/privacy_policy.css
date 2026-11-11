@@ -1,3 +1,7 @@
+.privacy-policy {
+    font-family: var(--font-1);
+}
+
 .privacy-policy-list {
     list-style-type: disc;
     padding-left: 1rem;

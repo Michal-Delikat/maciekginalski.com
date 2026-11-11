@@ -24,6 +24,7 @@
 
 .contact-heading {
     margin: 1rem 0 0.5rem;
+    font-family: var(--font-1);
 }
 
 .contact-info {
@@ -31,6 +32,7 @@
 }
 
 .privacy-policy {
+    font-family: var(--font-1);
     margin-inline: auto;
     display: block;
     text-align: left;

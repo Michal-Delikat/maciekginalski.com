@@ -1,11 +1,4 @@
 @font-face {
-    font-family: 'Minion Pro Regular';
-    src: url('../fonts/MinionPro-Regular.otf') format('opentype');
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'Cormorant Garamond';
     src: url('../fonts/cormorant-garamond-v21-latin-300.woff2') format('woff2');
     font-style: normal;
@@ -54,7 +47,7 @@ a:focus {
     --white: hsl(0, 0%, 100%);
     --transparent-background: rgba(255, 255, 255, 0.35);
 
-    --font-1: 'Minion Pro Regular', serif;
+    --font-1: 'Cormorant Garamond', serif;
     --font-2: 'Cormorant Garamond', serif;
     --font-3: 'Montserrat', sans-serif;
 
@@ -118,29 +111,3 @@ main {
     font-family: var(--font-1);
 }
 
-/* Button up scroll */
-
-.to-top {
-    background: white;
-    position: fixed;
-    bottom: 1rem;
-    right: 2.5rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    color: #1f1f1f;
-    text-decoration: none;
-    opacity: 0;
-    pointer-events: none;
-    transition: all .4s;
-}
-
-.to-top.active {
-    bottom: 32px;
-    pointer-events: auto;
-    opacity: 1;
-}
